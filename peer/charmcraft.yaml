@@ -1,0 +1,26 @@
+---
+name: jgol-peer
+type: charm
+title: Juju's Game of Life
+summary: Juju's Game of Life
+description: Juju's Game of Life
+
+base: ubuntu@24.04
+build-base: ubuntu@24.04
+platforms:
+    amd64:
+    arm64:
+
+parts:
+    hexanator:
+        plugin: uv
+        source: .
+
+# peer:
+provides:
+    rate-limit:
+        interface: http
+        description: tells the consumer application how to call gubernator
+
+actions:
+    test:

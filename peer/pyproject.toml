@@ -1,0 +1,73 @@
+[project]
+name = "jgol-peer"
+version = "0.1.0"
+description = "Juju's Game of Life"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # This will be fun later on, but don't want the extra dep yet
+    # "ops[tracing]",
+    "ops",
+]
+
+# Testing tools configuration
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_cli_level = "INFO"
+
+# Formatting tools configuration
+[tool.black]
+line-length = 99
+target-version = ["py38"]
+
+# Linting tools configuration
+[tool.ruff]
+line-length = 99
+select = ["E", "W", "F", "C", "N", "D", "I001"]
+extend-ignore = [
+    "D203",
+    "D204",
+    "D213",
+    "D215",
+    "D400",
+    "D404",
+    "D406",
+    "D407",
+    "D408",
+    "D409",
+    "D413",
+]
+ignore = ["E501", "D107"]
+extend-exclude = ["__pycache__", "*.egg_info"]
+per-file-ignores = {"tests/*" = ["D100","D101","D102","D103","D104","D205","D415"], "lib/*" = ["D401"]}
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.codespell]
+skip = "build,lib,venv,icon.svg,.tox,.git,.mypy_cache,.ruff_cache,.coverage,htmlcov"
+
+[tool.pyright]
+include = ["src/**/*.py", "tests/**/*.py"]
+
+[tool.uv.sources]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-cov",
+    "pyright",
+    "coverage[toml]",
+    "ops-scenario",
+    "ruff",
+    "codespell",
+]
+integration = [
+    "jubilant",
+]
