@@ -32,6 +32,7 @@ class JGOLPeerCharm(ops.CharmBase):
         * keep current round as is
         * post next round when all inputs are ready
         """
+        # __import__("pdb").set_trace()
         try:
             world = self.model.get_relation("world")
             assert world, "waiting for peer relation"
@@ -71,7 +72,7 @@ class JGOLPeerCharm(ops.CharmBase):
 
             self.unit.status = ops.ActiveStatus()
         except Exception as e:
-            self.unit.status = ops.BlockedStatus(str(e))
+            self.unit.status = ops.BlockedStatus(repr(e))
 
     def god(self, _event: ops.EventBase):
         """Play God with the cells."""
@@ -81,8 +82,8 @@ class JGOLPeerCharm(ops.CharmBase):
         try:
             world = self.model.get_relation("world")
             assert world, "Waiting for peer relation to come up"
-            run  = bool(cast(bool|None, self.config.get("run")))
-            init = cast(str|None, self.config.get("init"))
+            run = bool(cast(bool | None, self.config.get("run")))
+            init = cast(str | None, self.config.get("init"))
             assert init, "Waiting for the initial state"
 
             # FIXME check if own unit is listed in peer relation's units
@@ -112,7 +113,7 @@ class JGOLPeerCharm(ops.CharmBase):
                 # Still waiting for some units
                 self.app.status = ops.ActiveStatus(board)
         except Exception as e:
-            self.app.status = ops.BlockedStatus(str(e))
+            self.app.status = ops.BlockedStatus(repr(e))
 
     def board_state(self, world: ops.Relation, cells: list[str]) -> tuple[str, int | None]:
         """Determine if all units have completed the current round.
