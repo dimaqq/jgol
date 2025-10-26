@@ -16,11 +16,9 @@ parts:
         plugin: uv
         source: .
 
-# peer:
-provides:
-    rate-limit:
-        interface: http
-        description: tells the consumer application how to call gubernator
+peers:
+    world:
+        interface: jgol
 
 actions:
     test:
