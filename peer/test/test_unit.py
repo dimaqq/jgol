@@ -78,7 +78,7 @@ def test_init_unit(board):
     assert rel.local_unit_data == {"0": "0"}
 
 
-def excercise():
+def test_excercise():
     init = "000111000"
     local_app_data = cast(
         dict[str, JSON],
@@ -89,20 +89,32 @@ def excercise():
             "map": json.dumps(MAP_3X3),
         },
     )
-    # varies by unit
-    local_unit_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
     peers_data = {f"app/{i}": cast(dict[str, JSON], {}) for i in range(9)}
+    unit_messages = {f"app/{i}": "" for i in range(9)}
+    app_message = ""
 
-    for unit in range(9):
-        a, b = step(unit, local_app_data, local_unit_data[unit], peers_data)
+    for unit_id in range(9):
+        unit = f"app/{unit_id}"
+        app_data, peers_data[unit], app_msg, unit_messages[unit] = step(
+            unit, local_app_data, peers_data[unit], peers_data
+        )
+        if app_data is not None:
+            local_app_data = app_data
+        if app_msg is not None:
+            app_message = app_msg
+
+    print(app_message)
+    print(unit_messages)
+    __import__("pdb").set_trace()
 
 
 def step(
-    unit_id: int,
+    unit: str,
     local_app_data: Mapping[str, JSON],
     local_unit_data: Mapping[str, JSON],
     peers_data: Mapping[str, Mapping[str, JSON]],
-) -> tuple[dict[str, str] | None, dict[str, str]]:
+) -> tuple[dict[str, JSON] | None, dict[str, JSON], str | None, str]:
+    unit_id = int(unit.split("/")[-1])
     is_leader = not unit_id
     rel = PeerRelation(
         endpoint="world",
@@ -115,6 +127,8 @@ def step(
     state = State(relations={rel}, leader=is_leader)
     state = ctx.run(ctx.on.update_status(), state)
     rel = state.get_relation(1)
-    app_data = rel.local_app_data if is_leader else None
-    unit_data = rel.local_unit_data
-    return app_data, unit_data
+    app_data = cast(dict[str, JSON], rel.local_app_data) if is_leader else None
+    unit_data = cast(dict[str, JSON], rel.local_unit_data)
+    app_message = state.app_status.message if is_leader else None
+    unit_message = state.unit_status.message
+    return app_data, unit_data, app_message, unit_message
