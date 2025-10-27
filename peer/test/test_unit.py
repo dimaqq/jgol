@@ -80,29 +80,35 @@ def test_init_unit(board):
 
 def excercise():
     init = "000111000"
-    local_app_data={
-        "run": "false",
-        "round": "0",
-        "init": json.dumps(init),
-        "map": json.dumps(MAP_3X3),
-    }
+    local_app_data = cast(
+        dict[str, JSON],
+        {
+            "run": "false",
+            "round": "0",
+            "init": json.dumps(init),
+            "map": json.dumps(MAP_3X3),
+        },
+    )
     # varies by unit
-    local_unit_data={i: {} for i in range(9)}
-    peers_data={f"app/{i}": {} for i in range(9)}
+    local_unit_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
+    peers_data = {f"app/{i}": cast(dict[str, JSON], {}) for i in range(9)}
 
     for unit in range(9):
-        a, b = step(unit, local_app_data, local_unit_data[i], peers_data)
+        a, b = step(unit, local_app_data, local_unit_data[unit], peers_data)
+
 
 def step(
     unit_id: int,
     local_app_data: Mapping[str, JSON],
     local_unit_data: Mapping[str, JSON],
-    peers_data: Mapping[str, JSON],
+    peers_data: Mapping[str, Mapping[str, JSON]],
 ) -> tuple[dict[str, str] | None, dict[str, str]]:
     is_leader = not unit_id
     rel = PeerRelation(
         endpoint="world",
         id=1,
+        local_app_data=cast(dict[str, str], local_app_data),
+        local_unit_data=cast(dict[str, str], local_unit_data),
         peers_data=cast(dict[ops.testing.UnitID, dict[str, str]], peers_data),
     )
     ctx = Context(JGOLPeerCharm, app_name="app", unit_id=unit_id)
