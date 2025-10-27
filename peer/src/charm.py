@@ -115,7 +115,9 @@ class JGOLPeerCharm(ops.CharmBase):
         except Exception as e:
             self.app.status = ops.BlockedStatus(repr(e))
 
-    def board_state(self, world: ops.Relation, cells: list[str]) -> tuple[str, int | None]:
+    def board_state(
+        self, world: ops.Relation, cells: list[str]
+    ) -> tuple[str, int | None]:
         """Determine if all units have completed the current round.
 
         Returns current map, e.g. "...00..101...." and the target round.
