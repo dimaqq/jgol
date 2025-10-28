@@ -32,7 +32,6 @@ class JGOLPeerCharm(ops.CharmBase):
         * keep current round as is
         * post next round when all inputs are ready
         """
-        # __import__("pdb").set_trace()
         try:
             world = self.model.get_relation("world")
             assert world, "waiting for peer relation"
@@ -66,7 +65,7 @@ class JGOLPeerCharm(ops.CharmBase):
             next_round = round_ + 1
             world.data[self.unit][str(next_round)] = json.dumps(next_live)
             # clean up stale rounds
-            for k in world.data[self.unit]:
+            for k in list(world.data[self.unit]):
                 if k.isdigit() and int(k) not in (round_, next_round):
                     del world.data[self.unit][k]
 
@@ -79,6 +78,7 @@ class JGOLPeerCharm(ops.CharmBase):
         if not self.unit.is_leader():
             return
 
+        # __import__("pdb").set_trace()
         try:
             world = self.model.get_relation("world")
             assert world, "Waiting for peer relation to come up"
@@ -140,7 +140,8 @@ class JGOLPeerCharm(ops.CharmBase):
         next_round = max(active_rounds)
         for cell in cells:
             v = world.data[self.model.get_unit(cell)].get(str(next_round))
-            board += "." if v is None else json.loads(v)
+            # v could be "1", "0" or missing
+            board += v or "."
 
         completed = len(active_rounds) == 1
         return board, max(active_rounds) if completed else None
@@ -153,7 +154,7 @@ def neighbours(cells: list[str]) -> dict[str, list[str]]:
     assert N * N == len(cells)
 
     rv: dict[int, set[int]] = defaultdict(set)
-    for index in range(N):
+    for index in range(len(cells)):
         mey, mex = divmod(index, N)
         # FIXME this can be more elegant if I used slices
         for y in (-1, 0, 1):

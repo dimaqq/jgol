@@ -1,6 +1,7 @@
 """Test it."""
 
 import json
+from types import MappingProxyType
 from typing import Mapping, NewType, cast
 
 import ops
@@ -78,44 +79,52 @@ def test_init_unit(board):
     assert rel.local_unit_data == {"0": "0"}
 
 
-def test_excercise():
+def test_exercise():
     init = "000111000"
-    local_app_data = cast(
-        dict[str, JSON],
-        {
-            "run": "false",
-            "round": "0",
-            "init": json.dumps(init),
-            "map": json.dumps(MAP_3X3),
-        },
-    )
-    peers_data = {f"app/{i}": cast(dict[str, JSON], {}) for i in range(9)}
+    config = {"init": init}
+    local_app_data: dict[str, JSON] = {}
+    peers_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
     unit_messages = {f"app/{i}": "" for i in range(9)}
     app_message = ""
 
-    for unit_id in range(9):
-        unit = f"app/{unit_id}"
-        app_data, peers_data[unit], app_msg, unit_messages[unit] = step(
-            unit, local_app_data, peers_data[unit], peers_data
-        )
-        if app_data is not None:
-            local_app_data = app_data
-        if app_msg is not None:
-            app_message = app_msg
+    def loop():
+        nonlocal local_app_data, app_message
+        for unit_id in range(9):
+            unit = f"app/{unit_id}"
+            app_data, peers_data[unit_id], app_msg, unit_messages[unit] = step(
+                unit, config, local_app_data, peers_data
+            )
+            if app_data is not None:
+                local_app_data = app_data
+            if app_msg is not None:
+                app_message = app_msg
 
+    for i in range(2):
+        loop()
+        print(app_message)
+
+    config = {"init": init, "run": True}
+
+    for i in range(20):
+        loop()
+        print(app_message)
+
+    print("THE END")
     print(app_message)
     print(unit_messages)
-    __import__("pdb").set_trace()
+    #__import__("pdb").set_trace()
 
 
 def step(
     unit: str,
+    config: Mapping[str, str | int | float | bool],
     local_app_data: Mapping[str, JSON],
-    local_unit_data: Mapping[str, JSON],
-    peers_data: Mapping[str, Mapping[str, JSON]],
+    all_units_data: Mapping[ops.testing.UnitID, Mapping[str, JSON]],
 ) -> tuple[dict[str, JSON] | None, dict[str, JSON], str | None, str]:
     unit_id = int(unit.split("/")[-1])
     is_leader = not unit_id
+    peers_data = {k: v for k, v in all_units_data.items() if k != unit_id}
+    local_unit_data = all_units_data[unit_id]
     rel = PeerRelation(
         endpoint="world",
         id=1,
@@ -124,7 +133,9 @@ def step(
         peers_data=cast(dict[ops.testing.UnitID, dict[str, str]], peers_data),
     )
     ctx = Context(JGOLPeerCharm, app_name="app", unit_id=unit_id)
-    state = State(relations={rel}, leader=is_leader)
+    # https://github.com/canonical/operator/issues/2152
+    config_ = cast(dict[str, str | int | float | bool], MappingProxyType(config))
+    state = State(relations={rel}, leader=is_leader, config=config_)
     state = ctx.run(ctx.on.update_status(), state)
     rel = state.get_relation(1)
     app_data = cast(dict[str, JSON], rel.local_app_data) if is_leader else None
@@ -132,3 +143,7 @@ def step(
     app_message = state.app_status.message if is_leader else None
     unit_message = state.unit_status.message
     return app_data, unit_data, app_message, unit_message
+
+
+if __name__ == "__main__":
+    test_exercise()

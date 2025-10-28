@@ -20,12 +20,13 @@ peers:
     world:
         interface: jgol
 
-options:
-    run:
-        type: boolean
-        default: false
-    init:
-        type: string
+config:
+    options:
+        run:
+            type: boolean
+            default: false
+        init:
+            type: string
 
 actions:
     test:
