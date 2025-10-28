@@ -15,8 +15,8 @@ class JGOLPeerCharm(ops.CharmBase):
 
     def __init__(self, framework: ops.Framework):
         super().__init__(framework)
-        framework.observe(self.on.update_status, self.cell)
-        framework.observe(self.on.update_status, self.god)
+        framework.observe(self.on.collect_unit_status, self.cell)
+        framework.observe(self.on.collect_app_status, self.god)
 
     def cell(self, _event: ops.EventBase):
         """Update this cell based on neighbours.
