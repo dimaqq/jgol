@@ -1,6 +1,7 @@
 """Test it."""
 
 import json
+import re
 from types import MappingProxyType
 from typing import Mapping, NewType, cast
 
@@ -43,10 +44,8 @@ def test_boot():
     ctx = Context(JGOLPeerCharm, app_name="app", unit_id=0)
     state = State(leader=True, relations={rel})
     state = ctx.run(ctx.on.update_status(), state)
-    assert state.app_status == ops.BlockedStatus(
-        "AssertionError('Waiting for the initial state')"
-    )
-    assert state.unit_status == ops.BlockedStatus("KeyError('run')")
+    assert state.app_status == ops.WaitingStatus("Resetting... []")
+    assert state.unit_status == ops.ActiveStatus("unused")
 
 
 def test_boot_unit():
@@ -55,7 +54,7 @@ def test_boot_unit():
     ctx = Context(JGOLPeerCharm, app_name="app", unit_id=1)
     state = State(relations={rel})
     state = ctx.run(ctx.on.update_status(), state)
-    assert state.unit_status == ops.BlockedStatus("KeyError('run')")
+    assert state.unit_status == ops.WaitingStatus("KeyError('run')")
 
 
 def test_init_unit(board):
@@ -80,8 +79,7 @@ def test_init_unit(board):
 
 
 def test_exercise():
-    init = "000111000"
-    config = {"init": init}
+    config = {}
     local_app_data: dict[str, JSON] = {}
     peers_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
     unit_messages = {f"app/{i}": "" for i in range(9)}
@@ -105,10 +103,10 @@ def test_exercise():
         loop()
         print(app_message)
 
-    assert rv == ["......... Reset", "000111000 Ready"]
+    assert rv == ["Resetting... [.........]", "Reset [000111000]"]
     del rv[:]
 
-    config = {"init": init, "run": True}
+    config = {"run": True}
 
     for i in range(20):
         loop()
@@ -117,11 +115,17 @@ def test_exercise():
     print("THE END")
     print(app_message)
     print(unit_messages)
-    assert set(rv) == {"000111000", "010010010"}
+    boards = [board_from_status(r) for r in rv]
+    assert set(boards) == {"000111000", "010010010"}
     # Make sure they are interleaved
-    assert len(set(rv[::2])) == 1
-    assert len(set(rv[1::2])) == 1
-    assert rv[0] != rv[1]
+    assert len(set(boards[::2])) == 1
+    assert len(set(boards[1::2])) == 1
+    assert boards[0] != boards[1]
+
+
+def board_from_status(st: str) -> str | None:
+    if match := re.search(r"\[(.*)\]", st):
+        return match.groups()[0]
 
 
 def step(

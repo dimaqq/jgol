@@ -9,6 +9,8 @@ from typing import cast
 
 import ops
 
+INIT = "0001110001010101111110001110010101010101001010101000111101010111" * 99
+
 
 class JGOLPeerCharm(ops.CharmBase):
     """Juju's Game of Life."""
@@ -37,8 +39,11 @@ class JGOLPeerCharm(ops.CharmBase):
             assert world, "waiting for peer relation"
             run: bool = json.loads(world.data[self.app]["run"])
             round_: int = json.loads(world.data[self.app]["round"])
-            init: str = json.loads(world.data[self.app]["init"])
             neighbours: dict[str, list[str]] = json.loads(world.data[self.app]["map"])
+            init = INIT[: len(neighbours)]
+            if self.unit.name not in neighbours:
+                self.unit.status = ops.ActiveStatus("unused")
+                return
             own_index = list(neighbours).index(self.unit.name)
             init_live = int(init[own_index])
 
@@ -71,7 +76,7 @@ class JGOLPeerCharm(ops.CharmBase):
 
             self.unit.status = ops.ActiveStatus()
         except Exception as e:
-            self.unit.status = ops.BlockedStatus(repr(e))
+            self.unit.status = ops.WaitingStatus(repr(e))
 
     def god(self, _event: ops.EventBase):
         """Play God with the cells."""
@@ -83,35 +88,36 @@ class JGOLPeerCharm(ops.CharmBase):
             world = self.model.get_relation("world")
             assert world, "Waiting for peer relation to come up"
             run = bool(cast(bool | None, self.config.get("run")))
-            init = cast(str | None, self.config.get("init"))
-            assert init, "Waiting for the initial state"
 
-            # FIXME check if own unit is listed in peer relation's units
             cells = sorted({unit.name for unit in world.units} | {self.unit.name})
+            neighbours = neighbourhood(cells)
+            assert len(neighbours) <= len(INIT), "Initial map is too small"
+            cells = cells[: len(neighbours)]
 
-            assert len(init) == len(cells)
-            board, next_round = self.board_state(world, sorted(cells))
+            curr_round = json.loads(world.data[self.app].get("round", "0"))
+            board, next_round = self.board_state(world, cells)
 
-            world.data[self.app]["init"] = json.dumps(init)
             world.data[self.app]["run"] = json.dumps(run)
-            world.data[self.app]["map"] = json.dumps(neighbours(sorted(cells)))
+            world.data[self.app]["map"] = json.dumps(neighbours)
             if not run:
                 # Reset the board
                 world.data[self.app]["round"] = json.dumps(0)
                 if next_round == 0:
-                    self.app.status = ops.ActiveStatus(f"{board} Ready")
+                    self.app.status = ops.ActiveStatus(f"Reset [{board}]")
                 else:
                     # None -> inconsistent map, wait for some units
                     # int, !=0 -> map is consistent but not reset, wait for all units
-                    self.app.status = ops.BlockedStatus(f"{board} Reset")
+                    self.app.status = ops.WaitingStatus(f"Resetting... [{board}]")
                     # FIXME we could compare the map to initial...
             elif next_round is not None:
                 # All units completed this step, kick off the next round
                 world.data[self.app]["round"] = json.dumps(next_round)
-                self.app.status = ops.ActiveStatus(board)
+                self.app.status = ops.ActiveStatus(
+                    f"{curr_round}: [{board}] --> {next_round}"
+                )
             else:
                 # Still waiting for some units
-                self.app.status = ops.ActiveStatus(board)
+                self.app.status = ops.ActiveStatus(f"{curr_round}: [{board}]")
         except Exception as e:
             self.app.status = ops.BlockedStatus(repr(e))
 
@@ -147,11 +153,11 @@ class JGOLPeerCharm(ops.CharmBase):
         return board, max(active_rounds) if completed else None
 
 
-def neighbours(cells: list[str]) -> dict[str, list[str]]:
+def neighbourhood(cells: list[str]) -> dict[str, list[str]]:
     """Compute the map of neighbours {unit/1: [unit/3, unit/4, ...], ...}."""
     # Square N x N map
     N = int(len(cells) ** 0.5)  # noqa: N806
-    assert N * N == len(cells)
+    cells = cells[: N * N]
 
     rv: dict[int, set[int]] = defaultdict(set)
     for index in range(len(cells)):

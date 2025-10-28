@@ -27,8 +27,6 @@ config:
         run:
             type: boolean
             default: false
-        init:
-            type: string
 
 actions:
     test:
