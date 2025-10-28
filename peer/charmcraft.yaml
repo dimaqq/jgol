@@ -15,6 +15,8 @@ parts:
     hexanator:
         plugin: uv
         source: .
+        build-snaps:
+            - astral-uv
 
 peers:
     world:
