@@ -90,9 +90,11 @@ def exercise(units=11, rounds=2):
         nonlocal local_app_data, app_message
         for unit_id in range(units):
             unit = f"app/{unit_id}"
-            app_data, peers_data[unit_id], app_msg, unit_messages[unit] = step(
+            app_data, unit_data, app_msg, unit_message = step(
                 unit, config, local_app_data, peers_data
             )
+            peers_data[unit_id] = unit_data
+            unit_messages[unit] = unit_message
             if app_data is not None:
                 local_app_data = app_data
             if app_msg is not None:

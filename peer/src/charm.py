@@ -4,7 +4,6 @@
 """Juju's Game of Life."""
 
 import json
-from collections import defaultdict
 from typing import cast
 
 import ops
@@ -159,7 +158,7 @@ def neighbourhood(cells: list[str]) -> dict[str, list[str]]:
     N = int(len(cells) ** 0.5)  # noqa: N806
     cells = cells[: N * N]
 
-    rv: dict[int, set[int]] = defaultdict(set)
+    rv: dict[int, set[int]] = {i: set() for i in range(len(cells))}
     for index in range(len(cells)):
         mey, mex = divmod(index, N)
         # FIXME this can be more elegant if I used slices
