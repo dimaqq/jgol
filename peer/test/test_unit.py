@@ -78,17 +78,17 @@ def test_init_unit(board):
     assert rel.local_unit_data == {"0": "0"}
 
 
-def test_exercise():
+def exercise(units=11, rounds=2):
     config = {}
     local_app_data: dict[str, JSON] = {}
-    peers_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
-    unit_messages = {f"app/{i}": "" for i in range(9)}
+    peers_data = {i: cast(dict[str, JSON], {}) for i in range(units)}
+    unit_messages = {f"app/{i}": "" for i in range(units)}
     app_message = ""
     rv = []
 
     def loop():
         nonlocal local_app_data, app_message
-        for unit_id in range(9):
+        for unit_id in range(units):
             unit = f"app/{unit_id}"
             app_data, peers_data[unit_id], app_msg, unit_messages[unit] = step(
                 unit, config, local_app_data, peers_data
@@ -102,19 +102,32 @@ def test_exercise():
     for i in range(2):
         loop()
         print(app_message)
+        rounds -= 1
+        if not rounds:
+            return rv
 
-    assert rv == ["Resetting... [.........]", "Reset [000111000]"]
     del rv[:]
 
     config = {"run": True}
 
-    for i in range(20):
+    while rounds:
         loop()
         print(app_message)
+        rounds -= 1
 
     print("THE END")
     print(app_message)
     print(unit_messages)
+    return rv
+
+
+def test_init():
+    rv = exercise(rounds=2)
+    assert rv == ["Resetting... [.........]", "Reset [000111000]"]
+
+
+def test_run():
+    rv = exercise(rounds=20)
     boards = [board_from_status(r) for r in rv]
     assert set(boards) == {"000111000", "010010010"}
     # Make sure they are interleaved
@@ -159,4 +172,5 @@ def step(
 
 
 if __name__ == "__main__":
-    test_exercise()
+    import sys
+    exercise(int(sys.argv[1]), 10)
