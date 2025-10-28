@@ -1,5 +1,6 @@
 """Test it."""
 
+import concurrent.futures
 import json
 import re
 from types import MappingProxyType
@@ -79,47 +80,56 @@ def test_init_unit(board):
 
 
 def exercise(units=11, rounds=2):
-    config = {}
-    local_app_data: dict[str, JSON] = {}
-    peers_data = {i: cast(dict[str, JSON], {}) for i in range(units)}
-    unit_messages = {f"app/{i}": "" for i in range(units)}
-    app_message = ""
-    rv = []
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        config = {}
+        local_app_data: dict[str, JSON] = {}
+        peers_data = {i: cast(dict[str, JSON], {}) for i in range(units)}
+        unit_messages = {f"app/{i}": "" for i in range(units)}
+        app_message = ""
+        rv = []
 
-    def loop():
-        nonlocal local_app_data, app_message
-        for unit_id in range(units):
-            unit = f"app/{unit_id}"
-            result = step(unit, config, local_app_data, peers_data)
-            app_data, unit_data, app_msg, unit_message = result
-            peers_data[unit_id] = unit_data
-            unit_messages[unit] = unit_message
-            if app_data is not None:
-                local_app_data = app_data
-            if app_msg is not None:
-                app_message = app_msg
-        rv.append(app_message)
+        def loop():
+            nonlocal local_app_data, app_message
+            results = list(
+                executor.map(
+                    step,
+                    [f"app/{i}" for i in range(units)],
+                    [config] * units,
+                    [local_app_data] * units,
+                    [peers_data] * units,
+                )
+            )
+            for unit_id in range(units):
+                unit = f"app/{unit_id}"
+                app_data, unit_data, app_msg, unit_message = results[unit_id]
+                peers_data[unit_id] = unit_data
+                unit_messages[unit] = unit_message
+                if app_data is not None:
+                    local_app_data = app_data
+                if app_msg is not None:
+                    app_message = app_msg
+            rv.append(app_message)
 
-    for i in range(2):
-        loop()
+        for i in range(2):
+            loop()
+            print(app_message)
+            rounds -= 1
+            if not rounds:
+                return rv
+
+        del rv[:]
+
+        config = {"run": True}
+
+        while rounds:
+            loop()
+            print(app_message)
+            rounds -= 1
+
+        print("THE END")
         print(app_message)
-        rounds -= 1
-        if not rounds:
-            return rv
-
-    del rv[:]
-
-    config = {"run": True}
-
-    while rounds:
-        loop()
-        print(app_message)
-        rounds -= 1
-
-    print("THE END")
-    print(app_message)
-    print(unit_messages)
-    return rv
+        print(unit_messages)
+        return rv
 
 
 def test_init():
