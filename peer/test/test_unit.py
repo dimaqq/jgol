@@ -86,6 +86,7 @@ def test_exercise():
     peers_data = {i: cast(dict[str, JSON], {}) for i in range(9)}
     unit_messages = {f"app/{i}": "" for i in range(9)}
     app_message = ""
+    rv = []
 
     def loop():
         nonlocal local_app_data, app_message
@@ -98,10 +99,14 @@ def test_exercise():
                 local_app_data = app_data
             if app_msg is not None:
                 app_message = app_msg
+        rv.append(app_message)
 
     for i in range(2):
         loop()
         print(app_message)
+
+    assert rv == ["......... Reset", "000111000 Ready"]
+    del rv[:]
 
     config = {"init": init, "run": True}
 
@@ -112,7 +117,11 @@ def test_exercise():
     print("THE END")
     print(app_message)
     print(unit_messages)
-    #__import__("pdb").set_trace()
+    assert set(rv) == {"000111000", "010010010"}
+    # Make sure they are interleaved
+    assert len(set(rv[::2])) == 1
+    assert len(set(rv[1::2])) == 1
+    assert rv[0] != rv[1]
 
 
 def step(
