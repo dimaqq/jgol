@@ -4,6 +4,7 @@
 """Juju's Game of Life."""
 
 import json
+import logging
 from typing import cast
 
 import ops
@@ -102,21 +103,25 @@ class JGOLPeerCharm(ops.CharmBase):
                 # Reset the board
                 world.data[self.app]["round"] = json.dumps(0)
                 if next_round == 0:
-                    self.app.status = ops.ActiveStatus(f"Reset [{board}]")
+                    self.app.status = ops.ActiveStatus(msg := f"Reset [{board}]")
+                    logging.warning(msg)
                 else:
                     # None -> inconsistent map, wait for some units
                     # int, !=0 -> map is consistent but not reset, wait for all units
-                    self.app.status = ops.WaitingStatus(f"Resetting... [{board}]")
+                    self.app.status = ops.WaitingStatus(msg := f"Resetting... [{board}]")
+                    logging.warning(msg)
                     # FIXME we could compare the map to initial...
             elif next_round is not None:
                 # All units completed this step, kick off the next round
                 world.data[self.app]["round"] = json.dumps(next_round)
                 self.app.status = ops.ActiveStatus(
-                    f"{curr_round}: [{board}] --> {next_round}"
+                    msg := f"{curr_round}: [{board}] --> {next_round}"
                 )
+                logging.warning(msg)
             else:
                 # Still waiting for some units
-                self.app.status = ops.ActiveStatus(f"{curr_round}: [{board}]")
+                self.app.status = ops.ActiveStatus(msg := f"{curr_round}: [{board}]")
+                logging.warning(msg)
         except Exception as e:
             self.app.status = ops.BlockedStatus(repr(e))
 
@@ -178,5 +183,7 @@ def neighbourhood(cells: list[str]) -> dict[str, list[str]]:
     return {cells[k]: sorted(cells[vv] for vv in v) for k, v in rv.items()}
 
 
-if __name__ == "__main__":  # pragma: nocover
+if __name__ == "__main__":
+    # needs an extra handler to spit info out
+    # logging.basicConfig(level="INFO")
     ops.main(JGOLPeerCharm)  # type: ignore
