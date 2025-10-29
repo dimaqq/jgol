@@ -45,8 +45,8 @@ def test_boot():
     ctx = Context(JGOLPeerCharm, app_name="app", unit_id=0)
     state = State(leader=True, relations={rel})
     state = ctx.run(ctx.on.update_status(), state)
-    assert state.app_status == ops.WaitingStatus("Resetting... []")
-    assert state.unit_status == ops.ActiveStatus("unused")
+    assert state.app_status == ops.WaitingStatus("Resetting... [.]")
+    assert state.unit_status == ops.ActiveStatus()
 
 
 def test_boot_unit():
@@ -79,24 +79,35 @@ def test_init_unit(board):
     assert rel.local_unit_data == {"0": "0"}
 
 
-def exercise(units=11, rounds=2):
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+def exercise(units=20, rounds=20):
+    # About 1.5x faster with Python 3.15t
+    # Needs a fix in venv ops re OPERATOR_DISPATCH
+    # with concurrent.futures.ThreadPoolExecutor() as executor:
+    # Weirdly it's not any faster
+    # with concurrent.futures.ProcessPoolExecutor() as executor:
+    # Must serialise all data for subinterpreters, can't pass dicts
+    # with concurrent.futures.InterpreterPoolExecutor() as executor:
         config = {}
         local_app_data: dict[str, JSON] = {}
         peers_data = {i: cast(dict[str, JSON], {}) for i in range(units)}
         unit_messages = {f"app/{i}": "" for i in range(units)}
         app_message = ""
         rv = []
+        contexts = [Context(JGOLPeerCharm, app_name="app", unit_id=i) for i in range(units)]
 
         def loop():
             nonlocal local_app_data, app_message
             results = list(
-                executor.map(
+                # FIXME next speedup: disable logging
+                # or use higher logging level threshold in Scenario
+                # executor.map(
+                map(
                     step,
                     [f"app/{i}" for i in range(units)],
                     [config] * units,
                     [local_app_data] * units,
                     [peers_data] * units,
+                    contexts,
                 )
             )
             for unit_id in range(units):
@@ -110,7 +121,7 @@ def exercise(units=11, rounds=2):
                     app_message = app_msg
             rv.append(app_message)
 
-        for i in range(2):
+        for i in range(3):
             loop()
             print(app_message)
             rounds -= 1
@@ -133,18 +144,22 @@ def exercise(units=11, rounds=2):
 
 
 def test_init():
-    rv = exercise(rounds=2)
-    assert rv == ["Resetting... [.........]", "Reset [000111000]"]
+    # 11: 3x3 board with a few spare units
+    rv = exercise(11, rounds=3)
+    assert rv == ["Resetting... [.........]", "Reset [0........]", "Reset [000111000]"]
 
 
 def test_run():
-    rv = exercise(rounds=20)
+    rv = exercise(11, rounds=20)
     boards = [board_from_status(r) for r in rv]
-    assert set(boards) == {"000111000", "010010010"}
+    assert set(boards) == {"000111000", "0........", "010010010"}
     # Make sure they are interleaved
-    assert len(set(boards[::2])) == 1
-    assert len(set(boards[1::2])) == 1
-    assert boards[0] != boards[1]
+    # '000111000', '0........', '010010010', '0........',
+    assert len(set(boards[::4])) == 1
+    assert len(set(boards[1::4])) == 1
+    assert len(set(boards[2::4])) == 1
+    assert len(set(boards[3::4])) == 1
+    assert len(set(boards[:4])) == 3
 
 
 def board_from_status(st: str) -> str | None:
@@ -157,6 +172,7 @@ def step(
     config: Mapping[str, str | int | float | bool],
     local_app_data: Mapping[str, JSON],
     all_units_data: Mapping[ops.testing.UnitID, Mapping[str, JSON]],
+    context: ops.testing.Context,
 ) -> tuple[dict[str, JSON] | None, dict[str, JSON], str | None, str]:
     unit_id = int(unit.split("/")[-1])
     is_leader = not unit_id
@@ -169,11 +185,10 @@ def step(
         local_unit_data=cast(dict[str, str], local_unit_data),
         peers_data=cast(dict[ops.testing.UnitID, dict[str, str]], peers_data),
     )
-    ctx = Context(JGOLPeerCharm, app_name="app", unit_id=unit_id)
     # https://github.com/canonical/operator/issues/2152
     config_ = cast(dict[str, str | int | float | bool], MappingProxyType(config))
     state = State(relations={rel}, leader=is_leader, config=config_)
-    state = ctx.run(ctx.on.update_status(), state)
+    state = context.run(context.on.update_status(), state)
     rel = state.get_relation(1)
     app_data = cast(dict[str, JSON], rel.local_app_data) if is_leader else None
     unit_data = cast(dict[str, JSON], rel.local_unit_data)
@@ -184,5 +199,5 @@ def step(
 
 if __name__ == "__main__":
     import sys
-
-    exercise(int(sys.argv[1]), 10)
+    args = map(int, sys.argv[0:])
+    exercise(int(sys.argv[1]), int(sys.argv[2]))
