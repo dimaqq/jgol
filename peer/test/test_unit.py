@@ -1,6 +1,6 @@
 """Test it."""
 
-import concurrent.futures
+# import concurrent.futures
 import json
 import re
 from types import MappingProxyType
@@ -68,6 +68,7 @@ def test_init_unit(board):
             "round": "0",
             "init": '"000111000"',
             "map": board,
+            "leader": "app/42",
         },
         peers_data={},
     )

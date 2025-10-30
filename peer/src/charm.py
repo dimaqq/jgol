@@ -2,9 +2,18 @@
 # Copyright 2025 dima.tisnek@canonical.com
 # See LICENSE file for licensing details.
 """Juju's Game of Life."""
+import os  # noqa
+if os.environ.get("JUJU_HOOK_NAME") == "world-relation-changed":
+    if os.path.exists("leader.txt") and os.path.exists("neighbours.txt"):
+        leader = open("leader.txt").read()
+        neighbours = set(open("neighbours.txt").read().split())
+        if os.environ.get("JUJU_UNIT_NAME") != leader:
+            if os.environ.get("JUJU_REMOTE_UNIT") not in (neighbours | {leader}):
+                raise SystemExit(0)
 
 import json
 import logging
+from pathlib import Path
 from typing import cast
 
 import ops
@@ -44,6 +53,8 @@ class JGOLPeerCharm(ops.CharmBase):
             if self.unit.name not in neighbours:
                 self.unit.status = ops.ActiveStatus("unused")
                 return
+            Path("leader.txt").write_text(world.data[self.app]["leader"])
+            Path("neighbours.txt").write_text(" ".join(neighbours[self.unit.name]))
             own_index = list(neighbours).index(self.unit.name)
             init_live = int(init[own_index])
 
@@ -83,7 +94,6 @@ class JGOLPeerCharm(ops.CharmBase):
         if not self.unit.is_leader():
             return
 
-        # __import__("pdb").set_trace()
         try:
             world = self.model.get_relation("world")
             assert world, "Waiting for peer relation to come up"
@@ -99,6 +109,7 @@ class JGOLPeerCharm(ops.CharmBase):
 
             world.data[self.app]["run"] = json.dumps(run)
             world.data[self.app]["map"] = json.dumps(neighbours)
+            world.data[self.app]["leader"] = self.unit.name
             if not run:
                 # Reset the board
                 world.data[self.app]["round"] = json.dumps(0)
