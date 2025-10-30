@@ -1,5 +1,5 @@
 ---
-name: jgol-peer
+name: jgol-worker
 type: charm
 title: Juju's Game of Life
 summary: Juju's Game of Life
@@ -18,12 +18,6 @@ parts:
         build-snaps:
             - astral-uv
 
-peers:
+requires:
     world:
         interface: jgol
-
-config:
-    options:
-        run:
-            type: boolean
-            default: false

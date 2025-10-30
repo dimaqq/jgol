@@ -1,5 +1,5 @@
 ---
-name: jgol-peer
+name: jgol-coordinator
 type: charm
 title: Juju's Game of Life
 summary: Juju's Game of Life
@@ -18,7 +18,7 @@ parts:
         build-snaps:
             - astral-uv
 
-peers:
+provides:
     world:
         interface: jgol
 
