@@ -2,8 +2,8 @@
 # Copyright 2025 dima.tisnek@canonical.com
 # See LICENSE file for licensing details.
 """Juju's Game of Life."""
+
 import json
-from typing import cast
 
 import ops
 
@@ -42,8 +42,7 @@ class JGOLWorkerCharm(ops.CharmBase):
             live = int(board[own_index])
 
             neighbours_alive = sum(
-                int(board[neighbours.index(n)])
-                for n in neighbours[self.unit.name]
+                int(board[list(neighbours).index(n)]) for n in neighbours[self.unit.name]
             )
             if live and neighbours_alive in (2, 3):
                 next_live = 1
