@@ -33,17 +33,27 @@ class JGOLWorkerCharm(ops.CharmBase):
             world = self.model.get_relation("world")
             assert world, "waiting for relation"
 
-            # Determine which application databag contains the coordinator data.
+            # Determine which application databag contains coordinator data.
             required = {"round", "map", "board"}
             app_bag = world.data[self.app]
             if not required.issubset(app_bag.keys()):
-                # Fallback: look for a remote application databag that has all required keys.
-                for entity, bag in world.data.items():
-                    if isinstance(entity, ops.Application) and entity != self.app:
-                        if required.issubset(bag.keys()):
-                            app_bag = bag
-                            break
-            # Parse coordinator data (may still raise KeyError -> handled below)
+                # Gather all remote application bags that look like a coordinator.
+                matches = [
+                    bag
+                    for entity, bag in world.data.items()
+                    if isinstance(entity, ops.Application)
+                    and entity != self.app
+                    and required.issubset(bag.keys())
+                ]
+                if len(matches) == 1:
+                    app_bag = matches[0]
+                elif len(matches) > 1:
+                    self.unit.status = ops.WaitingStatus(
+                        "Multiple coordinator applications found"
+                    )
+                    return
+                # else: zero matches -> will raise KeyError below
+            # Parse coordinator data (may raise KeyError or other exceptions; generic handler below)
             round_: int = json.loads(app_bag["round"])
             neighbours: dict[str, list[str]] = json.loads(app_bag["map"])
             board: str = app_bag["board"]
