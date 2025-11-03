@@ -27,7 +27,7 @@ MAP_3X3 = {
 
 
 @pytest.fixture
-def context() -> Context[JGOLWorkerCharm]:
+def ctx() -> Context[JGOLWorkerCharm]:
     return Context(JGOLWorkerCharm, app_name="app", unit_id=4)
 
 
