@@ -11,12 +11,14 @@ import ops
 INIT = "0001110001010101111110001110010101010101001010101000111101010111" * 99
 
 
-class JGOLPeerCharm(ops.CharmBase):
+class JGOLCoordinatorCharm(ops.CharmBase):
     """Juju's Game of Life."""
 
     def __init__(self, framework: ops.Framework):
         super().__init__(framework)
-        framework.observe(self.on.collect_app_status, self.god)
+        framework.observe(self.on["world"].relation_joined, self.god)
+        framework.observe(self.on["world"].relation_changed, self.god)
+        framework.observe(self.on["world"].relation_departed, self.god)
 
     def god(self, _event: ops.EventBase):
         """Play God with the cells."""
@@ -26,11 +28,13 @@ class JGOLPeerCharm(ops.CharmBase):
         try:
             world = self.model.get_relation("world")
             assert world, "Waiting for peer relation to come up"
+
             run = bool(cast(bool | None, self.config.get("run")))
 
             cells = sorted(unit.name for unit in world.units)
             neighbours = neighbourhood(cells)
             assert len(neighbours) <= len(INIT), "Initial map is too small"
+
             cells = cells[: len(neighbours)]
 
             curr_round = json.loads(world.data[self.app].get("round", "0"))
@@ -81,18 +85,15 @@ class JGOLPeerCharm(ops.CharmBase):
         for cell in cells:
             try:
                 data = world.data[self.model.get_unit(cell)]
-                round_ = data.get("round")
-                value = data.get("value")
+                round_ = data.get("round", -1)
+                value = data.get("value", ".")
+                active_rounds.add(round_)
+                board += value
             except Exception as e:
                 raise ValueError(f"{cell}: {e}")
 
         if not active_rounds:
             return "." * len(cells), None
-
-        for cell in cells:
-            v = world.data[self.model.get_unit(cell)].get("value")
-            # v could be "1", "0" or missing
-            board += "." if v is None else v
 
         completed = len(active_rounds) == 1
         return board, max(active_rounds) if completed else None
