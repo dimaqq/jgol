@@ -27,11 +27,11 @@ MAP_3X3 = {
 
 
 @pytest.fixture
-def frather() -> Context[JGOLWorkerCharm]:
+def ctx() -> Context[JGOLWorkerCharm]:
     return Context(JGOLWorkerCharm, app_name="app", unit_id=4)
 
 
-def test_reset(frather: Context[JGOLWorkerCharm]):
+def test_reset(ctx: Context[JGOLWorkerCharm]):
     """Test that the charm can be instantiated and reset without errors."""
     rel = Relation(
         endpoint="world",
@@ -42,11 +42,11 @@ def test_reset(frather: Context[JGOLWorkerCharm]):
         },
     )
     state = State(relations={rel})
-    state = frather.run(frather.on.relation_changed(rel.id), state)
+    state = ctx.run(ctx.on.relation_changed(rel.id), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_processes_state(frather: Context):
+def test_worker_processes_state(ctx: Context):
     """Test that worker processes state and updates cell."""
     rel = Relation(
         endpoint="world",
@@ -66,22 +66,22 @@ def test_worker_processes_state(frather: Context):
         },
     )
     state = State(relations={rel})
-    state = frather.run(frather.on.relation_changed(rel.id), state)
+    state = ctx.run(ctx.on.relation_changed(rel.id), state)
     rel = state.get_relation(rel.id)
     assert rel.local_unit_data == {"cell": "1"}
 
 
-def test_worker_without_map(frather: Context):
+def test_worker_without_map(ctx: Context):
     """Test that worker handles missing map gracefully."""
     rel = Relation(
         endpoint="world", remote_app_name="coordinator", id=1, remote_app_data={}
     )
     state = State(relations={rel})
-    state = frather.run(frather.on.relation_changed(rel.id), state)
+    state = ctx.run(ctx.on.relation_changed(rel.id), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_with_incomplete_state(frather: Context):
+def test_worker_with_incomplete_state(ctx: Context):
     """Test that worker handles incomplete state data."""
     rel = Relation(
         endpoint="world",
@@ -94,5 +94,5 @@ def test_worker_with_incomplete_state(frather: Context):
         },
     )
     state = State(relations={rel})
-    state = frather.run(frather.on.relation_changed(rel.id), state)
+    state = ctx.run(ctx.on.relation_changed(rel.id), state)
     rel = state.get_relation(rel.id)
