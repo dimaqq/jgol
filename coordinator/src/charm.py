@@ -36,6 +36,8 @@ class JGOLPeerCharm(ops.CharmBase):
             curr_round = json.loads(world.data[self.app].get("round", "0"))
             board, next_round = self.board_state(world, cells, curr_round)
 
+            # co->wo: round, map, board
+            # wo->co: round, value
             world.data[self.app]["map"] = json.dumps(neighbours)
             if not run:
                 # Reset the board
