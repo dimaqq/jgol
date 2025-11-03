@@ -32,9 +32,9 @@ class JGOLWorkerCharm(ops.CharmBase):
         try:
             world = self.model.get_relation("world")
             assert world, "waiting for peer relation"
-            round_: int = json.loads(world.data[self.app]["round"])
-            neighbours: dict[str, list[str]] = json.loads(world.data[self.app]["map"])
-            board: str = world.data[self.app]["board"]
+            round_: int = json.loads(world.data[world.app]["round"])
+            neighbours: dict[str, list[str]] = json.loads(world.data[world.app]["map"])
+            board: str = world.data[world.app]["board"]
             if self.unit.name not in neighbours:
                 self.unit.status = ops.ActiveStatus("unused")
                 return

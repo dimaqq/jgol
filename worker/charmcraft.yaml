@@ -21,3 +21,4 @@ parts:
 requires:
     world:
         interface: jgol
+        limit: 1
