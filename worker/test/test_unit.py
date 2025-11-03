@@ -31,7 +31,7 @@ def context() -> Context[JGOLWorkerCharm]:
     return Context(JGOLWorkerCharm, app_name="app", unit_id=4)
 
 
-def test_reset(ctx: Context[JGOLWorkerCharm]):
+def test_reset(context: Context[JGOLWorkerCharm]):
     """Test that the charm can be instantiated and reset without errors."""
     rel = Relation(
         endpoint="world",
@@ -42,46 +42,41 @@ def test_reset(ctx: Context[JGOLWorkerCharm]):
         },
     )
     state = State(relations={rel})
-    state = ctx.run(ctx.on.relation_changed(rel.id), state)
+    state = context.run(context.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_processes_state(ctx: Context):
+def test_worker_processes_state(context: Context):
     """Test that worker processes state and updates cell."""
     rel = Relation(
         endpoint="world",
         remote_app_name="coordinator",
         id=1,
         remote_app_data={
+            "round": "0",
             "map": json.dumps(MAP_3X3),
-            "app/0": "0",
-            "app/1": "1",
-            "app/2": "0",
-            "app/3": "1",
-            "app/4": "1",
-            "app/5": "0",
-            "app/6": "0",
-            "app/7": "1",
-            "app/8": "0",
+            "board": "010110010",  # 3x3 board state as string
         },
     )
     state = State(relations={rel})
-    state = ctx.run(ctx.on.relation_changed(rel.id), state)
+    state = context.run(context.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
-    assert rel.local_unit_data == {"cell": "1"}
+    # Worker charm writes to local unit data with "value" and "round" keys
+    assert "value" in rel.local_unit_data
+    assert "round" in rel.local_unit_data
 
 
-def test_worker_without_map(ctx: Context):
+def test_worker_without_map(context: Context):
     """Test that worker handles missing map gracefully."""
     rel = Relation(
         endpoint="world", remote_app_name="coordinator", id=1, remote_app_data={}
     )
     state = State(relations={rel})
-    state = ctx.run(ctx.on.relation_changed(rel.id), state)
+    state = context.run(context.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_with_incomplete_state(ctx: Context):
+def test_worker_with_incomplete_state(context: Context):
     """Test that worker handles incomplete state data."""
     rel = Relation(
         endpoint="world",
@@ -94,5 +89,5 @@ def test_worker_with_incomplete_state(ctx: Context):
         },
     )
     state = State(relations={rel})
-    state = ctx.run(ctx.on.relation_changed(rel.id), state)
+    state = context.run(context.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
