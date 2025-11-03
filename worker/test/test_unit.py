@@ -31,7 +31,7 @@ def ctx() -> Context[JGOLWorkerCharm]:
     return Context(JGOLWorkerCharm, app_name="app", unit_id=4)
 
 
-def test_reset(context: Context[JGOLWorkerCharm]):
+def test_reset(ctx: Context[JGOLWorkerCharm]):
     """Test that the charm can be instantiated and reset without errors."""
     rel = Relation(
         endpoint="world",
@@ -42,11 +42,11 @@ def test_reset(context: Context[JGOLWorkerCharm]):
         },
     )
     state = State(relations={rel})
-    state = context.run(context.on.relation_changed(rel), state)
+    state = ctx.run(ctx.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_processes_state(context: Context):
+def test_worker_processes_state(ctx: Context):
     """Test that worker processes state and updates cell."""
     rel = Relation(
         endpoint="world",
@@ -59,24 +59,24 @@ def test_worker_processes_state(context: Context):
         },
     )
     state = State(relations={rel})
-    state = context.run(context.on.relation_changed(rel), state)
+    state = ctx.run(ctx.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
     # Worker charm writes to local unit data with "value" and "round" keys
     assert "value" in rel.local_unit_data
     assert "round" in rel.local_unit_data
 
 
-def test_worker_without_map(context: Context):
+def test_worker_without_map(ctx: Context):
     """Test that worker handles missing map gracefully."""
     rel = Relation(
         endpoint="world", remote_app_name="coordinator", id=1, remote_app_data={}
     )
     state = State(relations={rel})
-    state = context.run(context.on.relation_changed(rel), state)
+    state = ctx.run(ctx.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
 
 
-def test_worker_with_incomplete_state(context: Context):
+def test_worker_with_incomplete_state(ctx: Context):
     """Test that worker handles incomplete state data."""
     rel = Relation(
         endpoint="world",
@@ -89,5 +89,5 @@ def test_worker_with_incomplete_state(context: Context):
         },
     )
     state = State(relations={rel})
-    state = context.run(context.on.relation_changed(rel), state)
+    state = ctx.run(ctx.on.relation_changed(rel), state)
     rel = state.get_relation(rel.id)
