@@ -1,15 +1,11 @@
 """Test it."""
 
-# import concurrent.futures
 import json
-import re
-from types import MappingProxyType
-from typing import Mapping, NewType, cast
+from typing import NewType
+from unittest.mock import ANY
 
 import ops
-import ops.testing
-import pytest
-from ops.testing import Context, State, Relation
+from ops.testing import Context, Relation, State
 
 from charm import JGOLCoordinatorCharm
 
@@ -36,9 +32,25 @@ MAP_3X3 = {
 
 def test_boot():
     """Leader with blank config, etc."""
-    rel = Relation(endpoint="world", id=1, local_app_data={})
+    rel = Relation(
+        endpoint="world",
+        id=1,
+        local_app_data={},
+        remote_units_data={0: {}, 1: {}, 2: {}, 3: {}},
+    )
     ctx = Context(JGOLCoordinatorCharm, app_name="app", unit_id=0)
     state = State(leader=True, relations={rel})
-    state = ctx.run(ctx.on.update_status(), state)
-    assert state.app_status == ops.WaitingStatus("Resetting... [.]")
-    assert state.unit_status == ops.ActiveStatus()
+    state = ctx.run(ctx.on.relation_changed(rel), state)
+    assert state.app_status == ops.WaitingStatus("Resetting... [....]")
+    rel = state.get_relation(1)
+    assert rel.local_app_data == {
+        "map": ANY,
+        "board": "0001",
+        "round": "0",
+    }
+    assert json.loads(rel.local_app_data["map"]) == {
+        "remote/0": ["remote/1", "remote/2", "remote/3"],
+        "remote/1": ["remote/0", "remote/2", "remote/3"],
+        "remote/2": ["remote/0", "remote/1", "remote/3"],
+        "remote/3": ["remote/0", "remote/1", "remote/2"],
+    }

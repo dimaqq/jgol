@@ -2,6 +2,7 @@
 # Copyright 2025 dima.tisnek@canonical.com
 # See LICENSE file for licensing details.
 """Juju's Game of Life."""
+
 import json
 import logging
 from typing import cast
@@ -45,7 +46,7 @@ class JGOLCoordinatorCharm(ops.CharmBase):
             world.data[self.app]["map"] = json.dumps(neighbours)
             if not run:
                 # Reset the board
-                world.data[self.app]["board"] = INIT[:len(neighbours)]
+                world.data[self.app]["board"] = INIT[: len(neighbours)]
                 world.data[self.app]["round"] = json.dumps(0)
                 if next_round == 0:
                     self.app.status = ops.ActiveStatus(msg := f"Reset [{board}]")
@@ -53,7 +54,9 @@ class JGOLCoordinatorCharm(ops.CharmBase):
                 else:
                     # None -> inconsistent map, wait for some units
                     # int, !=0 -> map is consistent but not reset, wait for all units
-                    self.app.status = ops.WaitingStatus(msg := f"Resetting... [{board}]")
+                    self.app.status = ops.WaitingStatus(
+                        msg := f"Resetting... [{board}]"
+                    )
                     logging.warning(msg)
                     # FIXME we could compare the map to initial...
             elif next_round is not None:
