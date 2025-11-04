@@ -24,6 +24,7 @@ class JGOLCoordinatorCharm(ops.CharmBase):
 
     def god(self, _event: ops.EventBase):
         """Play God with the cells."""
+        self.unit.status = ops.ActiveStatus()
         if not self.unit.is_leader():
             return
 

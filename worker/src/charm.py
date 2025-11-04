@@ -55,7 +55,7 @@ class JGOLWorkerCharm(ops.CharmBase):
 
             world.data[self.unit]["value"] = json.dumps(next_live)
             world.data[self.unit]["round"] = json.dumps(round_)
-            self.unit.status = ops.ActiveStatus()
+            self.unit.status = ops.ActiveStatus(f"{round_}: {next_live}")
         except Exception as e:
             self.unit.status = ops.WaitingStatus(repr(e))
 
