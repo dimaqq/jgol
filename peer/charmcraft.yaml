@@ -12,7 +12,7 @@ platforms:
     arm64:
 
 parts:
-    hexanator:
+    peer:
         plugin: uv
         source: .
         build-snaps:
