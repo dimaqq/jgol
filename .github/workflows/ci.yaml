@@ -11,3 +11,4 @@ jobs:
             - uses: astral-sh/setup-uv@v7
             - run: cd peer && PYTHONPATH=src uv run pytest -vvv
             - run: cd worker && PYTHONPATH=src uv run pytest -vvv
+            - run: cd coordinator && PYTHONPATH=src uv run pytest -vvv

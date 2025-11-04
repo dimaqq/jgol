@@ -98,8 +98,8 @@ class JGOLCoordinatorCharm(ops.CharmBase):
         if not active_rounds:
             return "." * len(cells), None
 
-        completed = len(active_rounds) == 1
-        return board, max(active_rounds) if completed else None
+        completed = len(active_rounds) == 1 and max(active_rounds) >= 0
+        return board, max(active_rounds) + 1 if completed else None
 
 
 def neighbourhood(cells: list[str]) -> dict[str, list[str]]:

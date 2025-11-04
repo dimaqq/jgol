@@ -61,7 +61,7 @@ def test_waiting():
     rel = Relation(
         endpoint="world",
         id=1,
-        local_app_data={"round": "7"},
+        local_app_data={"round": "7", "board": "0001"},
         remote_units_data={0: {"round": "6", "value": "1"},
                            1: {"round": "6"},
                            2: {"value": "0"},
