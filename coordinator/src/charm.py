@@ -20,6 +20,7 @@ class JGOLCoordinatorCharm(ops.CharmBase):
         framework.observe(self.on["world"].relation_joined, self.god)
         framework.observe(self.on["world"].relation_changed, self.god)
         framework.observe(self.on["world"].relation_departed, self.god)
+        framework.observe(self.on.config_changed, self.god)
 
     def god(self, _event: ops.EventBase):
         """Play God with the cells."""

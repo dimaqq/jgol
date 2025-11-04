@@ -16,6 +16,7 @@ class JGOLWorkerCharm(ops.CharmBase):
         framework.observe(self.on["world"].relation_joined, self.cell)
         framework.observe(self.on["world"].relation_changed, self.cell)
         framework.observe(self.on["world"].relation_departed, self.cell)
+        framework.observe(self.on.config_changed, self.cell)
 
     def cell(self, _event: ops.EventBase):
         """Update this cell based on neighbours.
