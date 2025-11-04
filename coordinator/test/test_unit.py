@@ -54,3 +54,33 @@ def test_boot():
         "remote/2": ["remote/0", "remote/1", "remote/3"],
         "remote/3": ["remote/0", "remote/1", "remote/2"],
     }
+
+
+def test_waiting():
+    """Leader with blank config, etc."""
+    rel = Relation(
+        endpoint="world",
+        id=1,
+        local_app_data={"round": "7"},
+        remote_units_data={0: {"round": "6", "value": "1"},
+                           1: {"round": "6"},
+                           2: {"value": "0"},
+                           3: {"round": "7", "value": "0"},
+                           },
+    )
+    ctx = Context(JGOLCoordinatorCharm, app_name="app", unit_id=0)
+    state = State(leader=True, relations={rel}, config={"run": True})
+    state = ctx.run(ctx.on.relation_changed(rel), state)
+    assert state.app_status == ops.ActiveStatus("7: [...0]")
+    rel = state.get_relation(1)
+    assert rel.local_app_data == {
+        "map": ANY,
+        "board": "0001",
+        "round": "7",
+    }
+    assert json.loads(rel.local_app_data["map"]) == {
+        "remote/0": ["remote/1", "remote/2", "remote/3"],
+        "remote/1": ["remote/0", "remote/2", "remote/3"],
+        "remote/2": ["remote/0", "remote/1", "remote/3"],
+        "remote/3": ["remote/0", "remote/1", "remote/2"],
+    }

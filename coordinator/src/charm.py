@@ -88,10 +88,10 @@ class JGOLCoordinatorCharm(ops.CharmBase):
         for cell in cells:
             try:
                 data = world.data[self.model.get_unit(cell)]
-                round_ = data.get("round", -1)
+                round_ = int(data.get("round", "-1"))
                 value = data.get("value", ".")
                 active_rounds.add(round_)
-                board += value
+                board += value if round_ == curr_round else "."
             except Exception as e:
                 raise ValueError(f"{cell}: {e}")
 

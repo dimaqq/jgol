@@ -122,6 +122,17 @@ def exercise(units=20, rounds=20):
                     app_message = app_msg
             rv.append(app_message)
 
+            for con in contexts:
+                  con.trace_data.clear()
+                  con.juju_log.clear()
+                  con.removed_secret_revisions.clear()
+                  con.requested_storages.clear()
+                  con.unit_status_history
+                  con.unit_status_history.clear()
+                  con.workload_version_history.clear()
+                  con.app_status_history.clear()
+                  con.action_logs.clear()
+
         for i in range(3):
             loop()
             print(app_message)
@@ -138,6 +149,7 @@ def exercise(units=20, rounds=20):
             print(app_message)
             rounds -= 1
 
+        # __import__("pdb").set_trace()
         print("THE END")
         print(app_message)
         print(unit_messages)
