@@ -80,5 +80,4 @@ if __name__ == "__main__":
         print("fyi", k, n)
         frames = tuple(grayblack(expand_contract(process_file(p, n))))
         save_gif(frames, f"{k}-{n}.gif")
-        for b in frames:
-            print(b)
+        # for b in frames: print(b)
