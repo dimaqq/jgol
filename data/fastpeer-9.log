@@ -1,0 +1,1106 @@
+unit-jgol-peer-0: 07:04:55 INFO juju.cmd running containerAgent [3.6.11 17876b918429f0063380cdf07dc47f98a890778b gc go1.24.6]
+unit-jgol-peer-0: 07:04:55 INFO juju.cmd.containeragent.unit start "unit"
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.upgradesteps upgrade steps for 3.6.11 have already been run.
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-jgol-peer-0: 07:04:55 INFO juju.api cannot resolve "controller-service.controller-concierge-k8s.svc.cluster.local": lookup controller-service.controller-concierge-k8s.svc.cluster.local: operation was canceled
+unit-jgol-peer-0: 07:04:55 INFO juju.api connection established to "wss://10.152.183.135:17070/model/c3b88bf6-d093-4f8a-8a45-19872da0d10e/api"
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.apicaller [c3b88b] "unit-jgol-peer-0" successfully connected to "wss://10.152.183.135:17070"
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.logger logger worker started
+unit-jgol-peer-0: 07:04:55 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.leadership jgol-peer/0 promoted to leadership of jgol-peer
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.caasupgrader unblocking abort check
+unit-jgol-peer-0: 07:04:55 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-jgol-peer-0
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.uniter unit "jgol-peer/0" started
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.uniter resuming charm install
+unit-jgol-peer-0: 07:04:55 INFO juju.worker.uniter.charm downloading local:jgol-peer-0 from API server
+unit-jgol-peer-0: 07:04:55 INFO juju.downloader downloading from local:jgol-peer-0
+unit-jgol-peer-0: 07:04:55 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-jgol-peer-0: 07:04:55 INFO juju.downloader download complete ("local:jgol-peer-0")
+unit-jgol-peer-0: 07:04:55 INFO juju.downloader download verified ("local:jgol-peer-0")
+unit-jgol-peer-0: 07:04:56 INFO juju.worker.uniter hooks are retried false
+unit-jgol-peer-0: 07:04:56 INFO juju.worker.uniter found queued "install" hook
+unit-jgol-peer-0: 07:04:56 INFO juju.worker.uniter.operation ran "install" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:04:56 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [.]
+unit-jgol-peer-0: 07:04:57 INFO juju.worker.uniter.operation ran "world-relation-created" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:04:57 INFO juju.worker.uniter found queued "leader-elected" hook
+unit-jgol-peer-0: 07:04:57 WARNING unit.jgol-peer/0.juju-log Reset [0]
+unit-jgol-peer-0: 07:04:57 INFO juju.worker.uniter.operation ran "leader-elected" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:04:57 WARNING unit.jgol-peer/0.juju-log Reset [0]
+unit-jgol-peer-0: 07:04:58 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:04:58 INFO juju.worker.uniter found queued "start" hook
+unit-jgol-peer-0: 07:04:58 WARNING unit.jgol-peer/0.juju-log Reset [0]
+unit-jgol-peer-0: 07:04:58 INFO juju.worker.uniter.operation ran "start" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:04:58 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:04:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:04 WARNING unit.jgol-peer/0.juju-log Reset [0]
+unit-jgol-peer-0: 07:10:05 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:31 WARNING unit.jgol-peer/0.juju-log 0: [0] --> 0
+unit-jgol-peer-0: 07:10:32 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:32 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0] --> 1
+unit-jgol-peer-0: 07:10:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:32 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0] --> 2
+unit-jgol-peer-0: 07:10:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:33 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0] --> 3
+unit-jgol-peer-0: 07:10:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:33 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0] --> 4
+unit-jgol-peer-0: 07:10:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:34 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0] --> 5
+unit-jgol-peer-0: 07:10:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:34 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0] --> 6
+unit-jgol-peer-0: 07:10:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:35 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0] --> 7
+unit-jgol-peer-0: 07:10:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:35 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0] --> 8
+unit-jgol-peer-0: 07:10:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:36 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0] --> 9
+unit-jgol-peer-0: 07:10:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:36 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0] --> 10
+unit-jgol-peer-0: 07:10:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:37 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0] --> 11
+unit-jgol-peer-0: 07:10:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:37 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0] --> 12
+unit-jgol-peer-0: 07:10:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:38 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0] --> 13
+unit-jgol-peer-0: 07:10:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:38 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0] --> 14
+unit-jgol-peer-0: 07:10:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:39 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0] --> 15
+unit-jgol-peer-0: 07:10:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:39 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0] --> 16
+unit-jgol-peer-0: 07:10:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:40 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0] --> 17
+unit-jgol-peer-0: 07:10:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:40 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0] --> 18
+unit-jgol-peer-0: 07:10:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:41 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0] --> 19
+unit-jgol-peer-0: 07:10:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:41 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0] --> 20
+unit-jgol-peer-0: 07:10:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:42 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0] --> 21
+unit-jgol-peer-0: 07:10:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:42 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0] --> 22
+unit-jgol-peer-0: 07:10:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:43 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0] --> 23
+unit-jgol-peer-0: 07:10:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:43 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0] --> 24
+unit-jgol-peer-0: 07:10:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:44 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [0]
+unit-jgol-peer-0: 07:10:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:44 WARNING unit.jgol-peer/0.juju-log Reset [0]
+unit-jgol-peer-0: 07:10:44 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:10:45 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:10:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:35 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:11:35 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:35 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:11:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:36 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:11:36 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:36 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0]
+unit-jgol-peer-0: 07:11:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:37 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0...]
+unit-jgol-peer-0: 07:11:37 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:37 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0...]
+unit-jgol-peer-0: 07:11:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:38 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0...]
+unit-jgol-peer-0: 07:11:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:38 WARNING unit.jgol-peer/0.juju-log world:0: Reset [00..]
+unit-jgol-peer-0: 07:11:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:39 WARNING unit.jgol-peer/0.juju-log world:0: Reset [000.]
+unit-jgol-peer-0: 07:11:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:11:39 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:11:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:28 WARNING unit.jgol-peer/0.juju-log 0: [0001] --> 0
+unit-jgol-peer-0: 07:12:28 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:29 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0...]
+unit-jgol-peer-0: 07:12:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:29 WARNING unit.jgol-peer/0.juju-log world:0: 0: [00..]
+unit-jgol-peer-0: 07:12:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:30 WARNING unit.jgol-peer/0.juju-log world:0: 0: [000.]
+unit-jgol-peer-0: 07:12:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:30 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0000] --> 1
+unit-jgol-peer-0: 07:12:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:31 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0...]
+unit-jgol-peer-0: 07:12:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:31 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0..0]
+unit-jgol-peer-0: 07:12:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:32 WARNING unit.jgol-peer/0.juju-log world:0: 1: [00.0]
+unit-jgol-peer-0: 07:12:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:32 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0000] --> 2
+unit-jgol-peer-0: 07:12:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:33 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0...]
+unit-jgol-peer-0: 07:12:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:34 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0..0]
+unit-jgol-peer-0: 07:12:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:34 WARNING unit.jgol-peer/0.juju-log world:0: 2: [00.0]
+unit-jgol-peer-0: 07:12:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:35 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0000] --> 3
+unit-jgol-peer-0: 07:12:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:35 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0...]
+unit-jgol-peer-0: 07:12:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:36 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0.0.]
+unit-jgol-peer-0: 07:12:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:36 WARNING unit.jgol-peer/0.juju-log world:0: 3: [000.]
+unit-jgol-peer-0: 07:12:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:37 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0000] --> 4
+unit-jgol-peer-0: 07:12:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:37 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0...]
+unit-jgol-peer-0: 07:12:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:38 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0.0.]
+unit-jgol-peer-0: 07:12:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:39 WARNING unit.jgol-peer/0.juju-log world:0: 4: [000.]
+unit-jgol-peer-0: 07:12:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:39 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0000] --> 5
+unit-jgol-peer-0: 07:12:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:40 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0...]
+unit-jgol-peer-0: 07:12:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:40 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0.0.]
+unit-jgol-peer-0: 07:12:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:41 WARNING unit.jgol-peer/0.juju-log world:0: 5: [000.]
+unit-jgol-peer-0: 07:12:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:41 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0000] --> 6
+unit-jgol-peer-0: 07:12:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:42 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0...]
+unit-jgol-peer-0: 07:12:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:43 WARNING unit.jgol-peer/0.juju-log world:0: 6: [00..]
+unit-jgol-peer-0: 07:12:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:43 WARNING unit.jgol-peer/0.juju-log world:0: 6: [000.]
+unit-jgol-peer-0: 07:12:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:44 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0000] --> 7
+unit-jgol-peer-0: 07:12:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:44 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0...]
+unit-jgol-peer-0: 07:12:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:45 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0..0]
+unit-jgol-peer-0: 07:12:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:45 WARNING unit.jgol-peer/0.juju-log world:0: 7: [00.0]
+unit-jgol-peer-0: 07:12:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:46 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0000] --> 8
+unit-jgol-peer-0: 07:12:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:47 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0...]
+unit-jgol-peer-0: 07:12:47 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:47 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0..0]
+unit-jgol-peer-0: 07:12:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:48 WARNING unit.jgol-peer/0.juju-log world:0: 8: [00.0]
+unit-jgol-peer-0: 07:12:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:48 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0000] --> 9
+unit-jgol-peer-0: 07:12:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:49 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0...]
+unit-jgol-peer-0: 07:12:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:50 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0..0]
+unit-jgol-peer-0: 07:12:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:50 WARNING unit.jgol-peer/0.juju-log world:0: 9: [00.0]
+unit-jgol-peer-0: 07:12:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:51 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0000] --> 10
+unit-jgol-peer-0: 07:12:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:51 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0...]
+unit-jgol-peer-0: 07:12:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:52 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0.0.]
+unit-jgol-peer-0: 07:12:52 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:52 WARNING unit.jgol-peer/0.juju-log world:0: 10: [000.]
+unit-jgol-peer-0: 07:12:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:53 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0000] --> 11
+unit-jgol-peer-0: 07:12:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:53 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0...]
+unit-jgol-peer-0: 07:12:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:54 WARNING unit.jgol-peer/0.juju-log world:0: 11: [00..]
+unit-jgol-peer-0: 07:12:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:55 WARNING unit.jgol-peer/0.juju-log world:0: 11: [000.]
+unit-jgol-peer-0: 07:12:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:55 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0000] --> 12
+unit-jgol-peer-0: 07:12:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:56 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0...]
+unit-jgol-peer-0: 07:12:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:56 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0.0.]
+unit-jgol-peer-0: 07:12:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:57 WARNING unit.jgol-peer/0.juju-log world:0: 12: [000.]
+unit-jgol-peer-0: 07:12:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:57 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0000] --> 13
+unit-jgol-peer-0: 07:12:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:58 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0...]
+unit-jgol-peer-0: 07:12:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:59 WARNING unit.jgol-peer/0.juju-log world:0: 13: [00..]
+unit-jgol-peer-0: 07:12:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:12:59 WARNING unit.jgol-peer/0.juju-log world:0: 13: [000.]
+unit-jgol-peer-0: 07:12:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:00 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0000] --> 14
+unit-jgol-peer-0: 07:13:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:00 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0...]
+unit-jgol-peer-0: 07:13:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:01 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0..0]
+unit-jgol-peer-0: 07:13:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:01 WARNING unit.jgol-peer/0.juju-log world:0: 14: [00.0]
+unit-jgol-peer-0: 07:13:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:02 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0000] --> 15
+unit-jgol-peer-0: 07:13:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:02 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0...]
+unit-jgol-peer-0: 07:13:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:03 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0..0]
+unit-jgol-peer-0: 07:13:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:04 WARNING unit.jgol-peer/0.juju-log world:0: 15: [00.0]
+unit-jgol-peer-0: 07:13:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:04 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0000] --> 16
+unit-jgol-peer-0: 07:13:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:05 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0...]
+unit-jgol-peer-0: 07:13:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:05 WARNING unit.jgol-peer/0.juju-log world:0: 16: [00..]
+unit-jgol-peer-0: 07:13:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:06 WARNING unit.jgol-peer/0.juju-log world:0: 16: [000.]
+unit-jgol-peer-0: 07:13:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:06 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0000] --> 17
+unit-jgol-peer-0: 07:13:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:07 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0...]
+unit-jgol-peer-0: 07:13:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:08 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0.0.]
+unit-jgol-peer-0: 07:13:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:08 WARNING unit.jgol-peer/0.juju-log world:0: 17: [000.]
+unit-jgol-peer-0: 07:13:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:09 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0000] --> 18
+unit-jgol-peer-0: 07:13:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:09 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0...]
+unit-jgol-peer-0: 07:13:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:10 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0..0]
+unit-jgol-peer-0: 07:13:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:10 WARNING unit.jgol-peer/0.juju-log world:0: 18: [00.0]
+unit-jgol-peer-0: 07:13:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:11 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0000] --> 19
+unit-jgol-peer-0: 07:13:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:12 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0...]
+unit-jgol-peer-0: 07:13:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:12 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0..0]
+unit-jgol-peer-0: 07:13:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:13 WARNING unit.jgol-peer/0.juju-log world:0: 19: [00.0]
+unit-jgol-peer-0: 07:13:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:13 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0000] --> 20
+unit-jgol-peer-0: 07:13:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:14 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0...]
+unit-jgol-peer-0: 07:13:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:15 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0.0.]
+unit-jgol-peer-0: 07:13:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:15 WARNING unit.jgol-peer/0.juju-log world:0: 20: [000.]
+unit-jgol-peer-0: 07:13:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:16 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0000] --> 21
+unit-jgol-peer-0: 07:13:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:16 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0...]
+unit-jgol-peer-0: 07:13:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:17 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0.0.]
+unit-jgol-peer-0: 07:13:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:17 WARNING unit.jgol-peer/0.juju-log world:0: 21: [000.]
+unit-jgol-peer-0: 07:13:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:18 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0000] --> 22
+unit-jgol-peer-0: 07:13:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:18 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0...]
+unit-jgol-peer-0: 07:13:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:19 WARNING unit.jgol-peer/0.juju-log world:0: 22: [00..]
+unit-jgol-peer-0: 07:13:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:20 WARNING unit.jgol-peer/0.juju-log world:0: 22: [000.]
+unit-jgol-peer-0: 07:13:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:20 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0000] --> 23
+unit-jgol-peer-0: 07:13:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:21 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0...]
+unit-jgol-peer-0: 07:13:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:21 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0.0.]
+unit-jgol-peer-0: 07:13:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:22 WARNING unit.jgol-peer/0.juju-log world:0: 23: [000.]
+unit-jgol-peer-0: 07:13:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:22 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0000] --> 24
+unit-jgol-peer-0: 07:13:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:23 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0...]
+unit-jgol-peer-0: 07:13:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:24 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0..0]
+unit-jgol-peer-0: 07:13:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:24 WARNING unit.jgol-peer/0.juju-log world:0: 24: [00.0]
+unit-jgol-peer-0: 07:13:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:25 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0000] --> 25
+unit-jgol-peer-0: 07:13:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:25 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0...]
+unit-jgol-peer-0: 07:13:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:26 WARNING unit.jgol-peer/0.juju-log world:0: 25: [00..]
+unit-jgol-peer-0: 07:13:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:26 WARNING unit.jgol-peer/0.juju-log world:0: 25: [000.]
+unit-jgol-peer-0: 07:13:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:27 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0000] --> 26
+unit-jgol-peer-0: 07:13:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:27 WARNING unit.jgol-peer/0.juju-log world:0: 26: [0...]
+unit-jgol-peer-0: 07:13:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:28 WARNING unit.jgol-peer/0.juju-log Resetting... [0...]
+unit-jgol-peer-0: 07:13:28 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:29 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [.000]
+unit-jgol-peer-0: 07:13:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:29 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [.0..]
+unit-jgol-peer-0: 07:13:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:30 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [..00]
+unit-jgol-peer-0: 07:13:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:30 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [...0]
+unit-jgol-peer-0: 07:13:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:13:31 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:13:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:26 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:26 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:26 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:27 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:27 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:27 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:28 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:28 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:28 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:29 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:29 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:29 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001]
+unit-jgol-peer-0: 07:14:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:30 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001.....]
+unit-jgol-peer-0: 07:14:30 INFO juju.worker.uniter.operation ran "world-relation-joined" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:30 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001.....]
+unit-jgol-peer-0: 07:14:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:31 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001.....]
+unit-jgol-peer-0: 07:14:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:32 WARNING unit.jgol-peer/0.juju-log world:0: Reset [00011....]
+unit-jgol-peer-0: 07:14:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:32 WARNING unit.jgol-peer/0.juju-log world:0: Reset [000111...]
+unit-jgol-peer-0: 07:14:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:33 WARNING unit.jgol-peer/0.juju-log world:0: Reset [0001110..]
+unit-jgol-peer-0: 07:14:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:33 WARNING unit.jgol-peer/0.juju-log world:0: Reset [00011100.]
+unit-jgol-peer-0: 07:14:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:14:34 WARNING unit.jgol-peer/0.juju-log world:0: Reset [000111000]
+unit-jgol-peer-0: 07:14:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:16:00 WARNING unit.jgol-peer/0.juju-log Reset [000111000]
+unit-jgol-peer-0: 07:16:01 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:11 WARNING unit.jgol-peer/0.juju-log 0: [000111000] --> 0
+unit-jgol-peer-0: 07:20:12 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:12 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0........]
+unit-jgol-peer-0: 07:20:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:12 WARNING unit.jgol-peer/0.juju-log world:0: 0: [01.......]
+unit-jgol-peer-0: 07:20:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:13 WARNING unit.jgol-peer/0.juju-log world:0: 0: [010......]
+unit-jgol-peer-0: 07:20:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:13 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0100.....]
+unit-jgol-peer-0: 07:20:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:14 WARNING unit.jgol-peer/0.juju-log world:0: 0: [01001....]
+unit-jgol-peer-0: 07:20:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:14 WARNING unit.jgol-peer/0.juju-log world:0: 0: [010010...]
+unit-jgol-peer-0: 07:20:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:15 WARNING unit.jgol-peer/0.juju-log world:0: 0: [0100100..]
+unit-jgol-peer-0: 07:20:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:15 WARNING unit.jgol-peer/0.juju-log world:0: 0: [01001001.]
+unit-jgol-peer-0: 07:20:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:16 WARNING unit.jgol-peer/0.juju-log world:0: 0: [010010010] --> 1
+unit-jgol-peer-0: 07:20:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:17 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0........]
+unit-jgol-peer-0: 07:20:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:17 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0.......0]
+unit-jgol-peer-0: 07:20:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:18 WARNING unit.jgol-peer/0.juju-log world:0: 1: [00......0]
+unit-jgol-peer-0: 07:20:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:18 WARNING unit.jgol-peer/0.juju-log world:0: 1: [000.....0]
+unit-jgol-peer-0: 07:20:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:19 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0001....0]
+unit-jgol-peer-0: 07:20:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:19 WARNING unit.jgol-peer/0.juju-log world:0: 1: [00011...0]
+unit-jgol-peer-0: 07:20:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:20 WARNING unit.jgol-peer/0.juju-log world:0: 1: [000111..0]
+unit-jgol-peer-0: 07:20:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:20 WARNING unit.jgol-peer/0.juju-log world:0: 1: [0001110.0]
+unit-jgol-peer-0: 07:20:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:21 WARNING unit.jgol-peer/0.juju-log world:0: 1: [000111000] --> 2
+unit-jgol-peer-0: 07:20:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:22 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0........]
+unit-jgol-peer-0: 07:20:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:22 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0.......0]
+unit-jgol-peer-0: 07:20:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:23 WARNING unit.jgol-peer/0.juju-log world:0: 2: [01......0]
+unit-jgol-peer-0: 07:20:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:23 WARNING unit.jgol-peer/0.juju-log world:0: 2: [010.....0]
+unit-jgol-peer-0: 07:20:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:24 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0100....0]
+unit-jgol-peer-0: 07:20:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:24 WARNING unit.jgol-peer/0.juju-log world:0: 2: [01001...0]
+unit-jgol-peer-0: 07:20:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:25 WARNING unit.jgol-peer/0.juju-log world:0: 2: [010010..0]
+unit-jgol-peer-0: 07:20:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:26 WARNING unit.jgol-peer/0.juju-log world:0: 2: [0100100.0]
+unit-jgol-peer-0: 07:20:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:26 WARNING unit.jgol-peer/0.juju-log world:0: 2: [010010010] --> 3
+unit-jgol-peer-0: 07:20:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:27 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0........]
+unit-jgol-peer-0: 07:20:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:27 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0.0......]
+unit-jgol-peer-0: 07:20:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:28 WARNING unit.jgol-peer/0.juju-log world:0: 3: [000......]
+unit-jgol-peer-0: 07:20:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:28 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0001.....]
+unit-jgol-peer-0: 07:20:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:29 WARNING unit.jgol-peer/0.juju-log world:0: 3: [00011....]
+unit-jgol-peer-0: 07:20:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:29 WARNING unit.jgol-peer/0.juju-log world:0: 3: [000111...]
+unit-jgol-peer-0: 07:20:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:30 WARNING unit.jgol-peer/0.juju-log world:0: 3: [0001110..]
+unit-jgol-peer-0: 07:20:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:31 WARNING unit.jgol-peer/0.juju-log world:0: 3: [00011100.]
+unit-jgol-peer-0: 07:20:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:31 WARNING unit.jgol-peer/0.juju-log world:0: 3: [000111000] --> 4
+unit-jgol-peer-0: 07:20:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:32 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0........]
+unit-jgol-peer-0: 07:20:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:32 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0.....0..]
+unit-jgol-peer-0: 07:20:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:33 WARNING unit.jgol-peer/0.juju-log world:0: 4: [01....0..]
+unit-jgol-peer-0: 07:20:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:33 WARNING unit.jgol-peer/0.juju-log world:0: 4: [010...0..]
+unit-jgol-peer-0: 07:20:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:34 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0100..0..]
+unit-jgol-peer-0: 07:20:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:34 WARNING unit.jgol-peer/0.juju-log world:0: 4: [01001.0..]
+unit-jgol-peer-0: 07:20:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:35 WARNING unit.jgol-peer/0.juju-log world:0: 4: [0100100..]
+unit-jgol-peer-0: 07:20:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:36 WARNING unit.jgol-peer/0.juju-log world:0: 4: [01001001.]
+unit-jgol-peer-0: 07:20:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:36 WARNING unit.jgol-peer/0.juju-log world:0: 4: [010010010] --> 5
+unit-jgol-peer-0: 07:20:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:37 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0........]
+unit-jgol-peer-0: 07:20:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:37 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0.......0]
+unit-jgol-peer-0: 07:20:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:38 WARNING unit.jgol-peer/0.juju-log world:0: 5: [00......0]
+unit-jgol-peer-0: 07:20:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:38 WARNING unit.jgol-peer/0.juju-log world:0: 5: [000.....0]
+unit-jgol-peer-0: 07:20:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:39 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0001....0]
+unit-jgol-peer-0: 07:20:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:39 WARNING unit.jgol-peer/0.juju-log world:0: 5: [00011...0]
+unit-jgol-peer-0: 07:20:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:40 WARNING unit.jgol-peer/0.juju-log world:0: 5: [000111..0]
+unit-jgol-peer-0: 07:20:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:41 WARNING unit.jgol-peer/0.juju-log world:0: 5: [0001110.0]
+unit-jgol-peer-0: 07:20:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:41 WARNING unit.jgol-peer/0.juju-log world:0: 5: [000111000] --> 6
+unit-jgol-peer-0: 07:20:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:42 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0........]
+unit-jgol-peer-0: 07:20:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:42 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0......1.]
+unit-jgol-peer-0: 07:20:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:43 WARNING unit.jgol-peer/0.juju-log world:0: 6: [01.....1.]
+unit-jgol-peer-0: 07:20:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:43 WARNING unit.jgol-peer/0.juju-log world:0: 6: [010....1.]
+unit-jgol-peer-0: 07:20:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:44 WARNING unit.jgol-peer/0.juju-log world:0: 6: [0100...1.]
+unit-jgol-peer-0: 07:20:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:44 WARNING unit.jgol-peer/0.juju-log world:0: 6: [01001..1.]
+unit-jgol-peer-0: 07:20:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:45 WARNING unit.jgol-peer/0.juju-log world:0: 6: [010010.1.]
+unit-jgol-peer-0: 07:20:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:46 WARNING unit.jgol-peer/0.juju-log world:0: 6: [01001001.]
+unit-jgol-peer-0: 07:20:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:46 WARNING unit.jgol-peer/0.juju-log world:0: 6: [010010010] --> 7
+unit-jgol-peer-0: 07:20:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:47 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0........]
+unit-jgol-peer-0: 07:20:47 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:47 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0.....0..]
+unit-jgol-peer-0: 07:20:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:48 WARNING unit.jgol-peer/0.juju-log world:0: 7: [00....0..]
+unit-jgol-peer-0: 07:20:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:48 WARNING unit.jgol-peer/0.juju-log world:0: 7: [000...0..]
+unit-jgol-peer-0: 07:20:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:49 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0001..0..]
+unit-jgol-peer-0: 07:20:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:50 WARNING unit.jgol-peer/0.juju-log world:0: 7: [00011.0..]
+unit-jgol-peer-0: 07:20:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:50 WARNING unit.jgol-peer/0.juju-log world:0: 7: [0001110..]
+unit-jgol-peer-0: 07:20:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:51 WARNING unit.jgol-peer/0.juju-log world:0: 7: [00011100.]
+unit-jgol-peer-0: 07:20:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:51 WARNING unit.jgol-peer/0.juju-log world:0: 7: [000111000] --> 8
+unit-jgol-peer-0: 07:20:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:52 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0........]
+unit-jgol-peer-0: 07:20:52 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:52 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0.0......]
+unit-jgol-peer-0: 07:20:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:53 WARNING unit.jgol-peer/0.juju-log world:0: 8: [010......]
+unit-jgol-peer-0: 07:20:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:53 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0100.....]
+unit-jgol-peer-0: 07:20:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:54 WARNING unit.jgol-peer/0.juju-log world:0: 8: [01001....]
+unit-jgol-peer-0: 07:20:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:55 WARNING unit.jgol-peer/0.juju-log world:0: 8: [010010...]
+unit-jgol-peer-0: 07:20:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:55 WARNING unit.jgol-peer/0.juju-log world:0: 8: [0100100..]
+unit-jgol-peer-0: 07:20:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:56 WARNING unit.jgol-peer/0.juju-log world:0: 8: [01001001.]
+unit-jgol-peer-0: 07:20:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:56 WARNING unit.jgol-peer/0.juju-log world:0: 8: [010010010] --> 9
+unit-jgol-peer-0: 07:20:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:57 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0........]
+unit-jgol-peer-0: 07:20:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:57 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0..1.....]
+unit-jgol-peer-0: 07:20:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:58 WARNING unit.jgol-peer/0.juju-log world:0: 9: [00.1.....]
+unit-jgol-peer-0: 07:20:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:58 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0001.....]
+unit-jgol-peer-0: 07:20:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:20:59 WARNING unit.jgol-peer/0.juju-log world:0: 9: [00011....]
+unit-jgol-peer-0: 07:20:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:00 WARNING unit.jgol-peer/0.juju-log world:0: 9: [000111...]
+unit-jgol-peer-0: 07:21:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:00 WARNING unit.jgol-peer/0.juju-log world:0: 9: [0001110..]
+unit-jgol-peer-0: 07:21:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:01 WARNING unit.jgol-peer/0.juju-log world:0: 9: [00011100.]
+unit-jgol-peer-0: 07:21:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:01 WARNING unit.jgol-peer/0.juju-log world:0: 9: [000111000] --> 10
+unit-jgol-peer-0: 07:21:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:02 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0........]
+unit-jgol-peer-0: 07:21:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:02 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0.....0..]
+unit-jgol-peer-0: 07:21:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:03 WARNING unit.jgol-peer/0.juju-log world:0: 10: [01....0..]
+unit-jgol-peer-0: 07:21:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:03 WARNING unit.jgol-peer/0.juju-log world:0: 10: [010...0..]
+unit-jgol-peer-0: 07:21:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:04 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0100..0..]
+unit-jgol-peer-0: 07:21:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:05 WARNING unit.jgol-peer/0.juju-log world:0: 10: [01001.0..]
+unit-jgol-peer-0: 07:21:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:05 WARNING unit.jgol-peer/0.juju-log world:0: 10: [0100100..]
+unit-jgol-peer-0: 07:21:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:06 WARNING unit.jgol-peer/0.juju-log world:0: 10: [01001001.]
+unit-jgol-peer-0: 07:21:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:06 WARNING unit.jgol-peer/0.juju-log world:0: 10: [010010010] --> 11
+unit-jgol-peer-0: 07:21:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:07 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0........]
+unit-jgol-peer-0: 07:21:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:07 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0.......0]
+unit-jgol-peer-0: 07:21:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:08 WARNING unit.jgol-peer/0.juju-log world:0: 11: [00......0]
+unit-jgol-peer-0: 07:21:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:09 WARNING unit.jgol-peer/0.juju-log world:0: 11: [000.....0]
+unit-jgol-peer-0: 07:21:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:09 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0001....0]
+unit-jgol-peer-0: 07:21:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:10 WARNING unit.jgol-peer/0.juju-log world:0: 11: [00011...0]
+unit-jgol-peer-0: 07:21:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:10 WARNING unit.jgol-peer/0.juju-log world:0: 11: [000111..0]
+unit-jgol-peer-0: 07:21:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:11 WARNING unit.jgol-peer/0.juju-log world:0: 11: [0001110.0]
+unit-jgol-peer-0: 07:21:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:11 WARNING unit.jgol-peer/0.juju-log world:0: 11: [000111000] --> 12
+unit-jgol-peer-0: 07:21:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:12 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0........]
+unit-jgol-peer-0: 07:21:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:12 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0.......0]
+unit-jgol-peer-0: 07:21:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:13 WARNING unit.jgol-peer/0.juju-log world:0: 12: [01......0]
+unit-jgol-peer-0: 07:21:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:14 WARNING unit.jgol-peer/0.juju-log world:0: 12: [010.....0]
+unit-jgol-peer-0: 07:21:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:14 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0100....0]
+unit-jgol-peer-0: 07:21:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:15 WARNING unit.jgol-peer/0.juju-log world:0: 12: [01001...0]
+unit-jgol-peer-0: 07:21:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:15 WARNING unit.jgol-peer/0.juju-log world:0: 12: [010010..0]
+unit-jgol-peer-0: 07:21:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:16 WARNING unit.jgol-peer/0.juju-log world:0: 12: [0100100.0]
+unit-jgol-peer-0: 07:21:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:16 WARNING unit.jgol-peer/0.juju-log world:0: 12: [010010010] --> 13
+unit-jgol-peer-0: 07:21:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:17 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0........]
+unit-jgol-peer-0: 07:21:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:17 WARNING unit.jgol-peer/0.juju-log world:0: 13: [00.......]
+unit-jgol-peer-0: 07:21:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:18 WARNING unit.jgol-peer/0.juju-log world:0: 13: [000......]
+unit-jgol-peer-0: 07:21:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:19 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0001.....]
+unit-jgol-peer-0: 07:21:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:19 WARNING unit.jgol-peer/0.juju-log world:0: 13: [00011....]
+unit-jgol-peer-0: 07:21:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:20 WARNING unit.jgol-peer/0.juju-log world:0: 13: [000111...]
+unit-jgol-peer-0: 07:21:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:20 WARNING unit.jgol-peer/0.juju-log world:0: 13: [0001110..]
+unit-jgol-peer-0: 07:21:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:21 WARNING unit.jgol-peer/0.juju-log world:0: 13: [00011100.]
+unit-jgol-peer-0: 07:21:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:21 WARNING unit.jgol-peer/0.juju-log world:0: 13: [000111000] --> 14
+unit-jgol-peer-0: 07:21:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:22 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0........]
+unit-jgol-peer-0: 07:21:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:22 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0.....0..]
+unit-jgol-peer-0: 07:21:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:23 WARNING unit.jgol-peer/0.juju-log world:0: 14: [01....0..]
+unit-jgol-peer-0: 07:21:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:24 WARNING unit.jgol-peer/0.juju-log world:0: 14: [010...0..]
+unit-jgol-peer-0: 07:21:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:24 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0100..0..]
+unit-jgol-peer-0: 07:21:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:25 WARNING unit.jgol-peer/0.juju-log world:0: 14: [01001.0..]
+unit-jgol-peer-0: 07:21:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:25 WARNING unit.jgol-peer/0.juju-log world:0: 14: [0100100..]
+unit-jgol-peer-0: 07:21:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:26 WARNING unit.jgol-peer/0.juju-log world:0: 14: [01001001.]
+unit-jgol-peer-0: 07:21:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:26 WARNING unit.jgol-peer/0.juju-log world:0: 14: [010010010] --> 15
+unit-jgol-peer-0: 07:21:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:27 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0........]
+unit-jgol-peer-0: 07:21:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:27 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0.0......]
+unit-jgol-peer-0: 07:21:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:28 WARNING unit.jgol-peer/0.juju-log world:0: 15: [000......]
+unit-jgol-peer-0: 07:21:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:29 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0001.....]
+unit-jgol-peer-0: 07:21:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:29 WARNING unit.jgol-peer/0.juju-log world:0: 15: [00011....]
+unit-jgol-peer-0: 07:21:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:30 WARNING unit.jgol-peer/0.juju-log world:0: 15: [000111...]
+unit-jgol-peer-0: 07:21:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:30 WARNING unit.jgol-peer/0.juju-log world:0: 15: [0001110..]
+unit-jgol-peer-0: 07:21:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:31 WARNING unit.jgol-peer/0.juju-log world:0: 15: [00011100.]
+unit-jgol-peer-0: 07:21:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:31 WARNING unit.jgol-peer/0.juju-log world:0: 15: [000111000] --> 16
+unit-jgol-peer-0: 07:21:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:32 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0........]
+unit-jgol-peer-0: 07:21:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:32 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0.0......]
+unit-jgol-peer-0: 07:21:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:33 WARNING unit.jgol-peer/0.juju-log world:0: 16: [010......]
+unit-jgol-peer-0: 07:21:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:34 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0100.....]
+unit-jgol-peer-0: 07:21:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:34 WARNING unit.jgol-peer/0.juju-log world:0: 16: [01001....]
+unit-jgol-peer-0: 07:21:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:35 WARNING unit.jgol-peer/0.juju-log world:0: 16: [010010...]
+unit-jgol-peer-0: 07:21:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:35 WARNING unit.jgol-peer/0.juju-log world:0: 16: [0100100..]
+unit-jgol-peer-0: 07:21:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:36 WARNING unit.jgol-peer/0.juju-log world:0: 16: [01001001.]
+unit-jgol-peer-0: 07:21:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:36 WARNING unit.jgol-peer/0.juju-log world:0: 16: [010010010] --> 17
+unit-jgol-peer-0: 07:21:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:37 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0........]
+unit-jgol-peer-0: 07:21:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:37 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0.......0]
+unit-jgol-peer-0: 07:21:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:38 WARNING unit.jgol-peer/0.juju-log world:0: 17: [00......0]
+unit-jgol-peer-0: 07:21:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:39 WARNING unit.jgol-peer/0.juju-log world:0: 17: [000.....0]
+unit-jgol-peer-0: 07:21:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:39 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0001....0]
+unit-jgol-peer-0: 07:21:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:40 WARNING unit.jgol-peer/0.juju-log world:0: 17: [00011...0]
+unit-jgol-peer-0: 07:21:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:40 WARNING unit.jgol-peer/0.juju-log world:0: 17: [000111..0]
+unit-jgol-peer-0: 07:21:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:41 WARNING unit.jgol-peer/0.juju-log world:0: 17: [0001110.0]
+unit-jgol-peer-0: 07:21:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:41 WARNING unit.jgol-peer/0.juju-log world:0: 17: [000111000] --> 18
+unit-jgol-peer-0: 07:21:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:42 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0........]
+unit-jgol-peer-0: 07:21:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:42 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0.......0]
+unit-jgol-peer-0: 07:21:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:43 WARNING unit.jgol-peer/0.juju-log world:0: 18: [01......0]
+unit-jgol-peer-0: 07:21:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:44 WARNING unit.jgol-peer/0.juju-log world:0: 18: [010.....0]
+unit-jgol-peer-0: 07:21:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:44 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0100....0]
+unit-jgol-peer-0: 07:21:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:45 WARNING unit.jgol-peer/0.juju-log world:0: 18: [01001...0]
+unit-jgol-peer-0: 07:21:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:45 WARNING unit.jgol-peer/0.juju-log world:0: 18: [010010..0]
+unit-jgol-peer-0: 07:21:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:46 WARNING unit.jgol-peer/0.juju-log world:0: 18: [0100100.0]
+unit-jgol-peer-0: 07:21:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:46 WARNING unit.jgol-peer/0.juju-log world:0: 18: [010010010] --> 19
+unit-jgol-peer-0: 07:21:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:47 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0........]
+unit-jgol-peer-0: 07:21:47 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:47 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0.......0]
+unit-jgol-peer-0: 07:21:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:48 WARNING unit.jgol-peer/0.juju-log world:0: 19: [00......0]
+unit-jgol-peer-0: 07:21:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:49 WARNING unit.jgol-peer/0.juju-log world:0: 19: [000.....0]
+unit-jgol-peer-0: 07:21:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:49 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0001....0]
+unit-jgol-peer-0: 07:21:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:50 WARNING unit.jgol-peer/0.juju-log world:0: 19: [00011...0]
+unit-jgol-peer-0: 07:21:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:50 WARNING unit.jgol-peer/0.juju-log world:0: 19: [000111..0]
+unit-jgol-peer-0: 07:21:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:51 WARNING unit.jgol-peer/0.juju-log world:0: 19: [0001110.0]
+unit-jgol-peer-0: 07:21:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:51 WARNING unit.jgol-peer/0.juju-log world:0: 19: [000111000] --> 20
+unit-jgol-peer-0: 07:21:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:52 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0........]
+unit-jgol-peer-0: 07:21:52 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:53 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0.....0..]
+unit-jgol-peer-0: 07:21:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:53 WARNING unit.jgol-peer/0.juju-log world:0: 20: [01....0..]
+unit-jgol-peer-0: 07:21:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:54 WARNING unit.jgol-peer/0.juju-log world:0: 20: [010...0..]
+unit-jgol-peer-0: 07:21:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:54 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0100..0..]
+unit-jgol-peer-0: 07:21:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:55 WARNING unit.jgol-peer/0.juju-log world:0: 20: [01001.0..]
+unit-jgol-peer-0: 07:21:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:55 WARNING unit.jgol-peer/0.juju-log world:0: 20: [0100100..]
+unit-jgol-peer-0: 07:21:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:56 WARNING unit.jgol-peer/0.juju-log world:0: 20: [01001001.]
+unit-jgol-peer-0: 07:21:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:56 WARNING unit.jgol-peer/0.juju-log world:0: 20: [010010010] --> 21
+unit-jgol-peer-0: 07:21:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:57 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0........]
+unit-jgol-peer-0: 07:21:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:58 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0.....0..]
+unit-jgol-peer-0: 07:21:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:58 WARNING unit.jgol-peer/0.juju-log world:0: 21: [00....0..]
+unit-jgol-peer-0: 07:21:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:59 WARNING unit.jgol-peer/0.juju-log world:0: 21: [000...0..]
+unit-jgol-peer-0: 07:21:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:21:59 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0001..0..]
+unit-jgol-peer-0: 07:21:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:00 WARNING unit.jgol-peer/0.juju-log world:0: 21: [00011.0..]
+unit-jgol-peer-0: 07:22:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:00 WARNING unit.jgol-peer/0.juju-log world:0: 21: [0001110..]
+unit-jgol-peer-0: 07:22:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:01 WARNING unit.jgol-peer/0.juju-log world:0: 21: [00011100.]
+unit-jgol-peer-0: 07:22:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:01 WARNING unit.jgol-peer/0.juju-log world:0: 21: [000111000] --> 22
+unit-jgol-peer-0: 07:22:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:02 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0........]
+unit-jgol-peer-0: 07:22:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:03 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0.......0]
+unit-jgol-peer-0: 07:22:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:03 WARNING unit.jgol-peer/0.juju-log world:0: 22: [01......0]
+unit-jgol-peer-0: 07:22:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:04 WARNING unit.jgol-peer/0.juju-log world:0: 22: [010.....0]
+unit-jgol-peer-0: 07:22:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:04 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0100....0]
+unit-jgol-peer-0: 07:22:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:05 WARNING unit.jgol-peer/0.juju-log world:0: 22: [01001...0]
+unit-jgol-peer-0: 07:22:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:05 WARNING unit.jgol-peer/0.juju-log world:0: 22: [010010..0]
+unit-jgol-peer-0: 07:22:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:06 WARNING unit.jgol-peer/0.juju-log world:0: 22: [0100100.0]
+unit-jgol-peer-0: 07:22:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:06 WARNING unit.jgol-peer/0.juju-log world:0: 22: [010010010] --> 23
+unit-jgol-peer-0: 07:22:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:07 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0........]
+unit-jgol-peer-0: 07:22:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:08 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0.0......]
+unit-jgol-peer-0: 07:22:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:08 WARNING unit.jgol-peer/0.juju-log world:0: 23: [000......]
+unit-jgol-peer-0: 07:22:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:09 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0001.....]
+unit-jgol-peer-0: 07:22:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:09 WARNING unit.jgol-peer/0.juju-log world:0: 23: [00011....]
+unit-jgol-peer-0: 07:22:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:10 WARNING unit.jgol-peer/0.juju-log world:0: 23: [000111...]
+unit-jgol-peer-0: 07:22:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:10 WARNING unit.jgol-peer/0.juju-log world:0: 23: [0001110..]
+unit-jgol-peer-0: 07:22:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:11 WARNING unit.jgol-peer/0.juju-log world:0: 23: [00011100.]
+unit-jgol-peer-0: 07:22:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:11 WARNING unit.jgol-peer/0.juju-log world:0: 23: [000111000] --> 24
+unit-jgol-peer-0: 07:22:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:12 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0........]
+unit-jgol-peer-0: 07:22:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:13 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0.......0]
+unit-jgol-peer-0: 07:22:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:13 WARNING unit.jgol-peer/0.juju-log world:0: 24: [01......0]
+unit-jgol-peer-0: 07:22:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:14 WARNING unit.jgol-peer/0.juju-log world:0: 24: [010.....0]
+unit-jgol-peer-0: 07:22:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:14 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0100....0]
+unit-jgol-peer-0: 07:22:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:15 WARNING unit.jgol-peer/0.juju-log world:0: 24: [01001...0]
+unit-jgol-peer-0: 07:22:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:15 WARNING unit.jgol-peer/0.juju-log world:0: 24: [010010..0]
+unit-jgol-peer-0: 07:22:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:16 WARNING unit.jgol-peer/0.juju-log world:0: 24: [0100100.0]
+unit-jgol-peer-0: 07:22:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:16 WARNING unit.jgol-peer/0.juju-log world:0: 24: [010010010] --> 25
+unit-jgol-peer-0: 07:22:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:17 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0........]
+unit-jgol-peer-0: 07:22:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:18 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0.......0]
+unit-jgol-peer-0: 07:22:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:18 WARNING unit.jgol-peer/0.juju-log world:0: 25: [00......0]
+unit-jgol-peer-0: 07:22:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:19 WARNING unit.jgol-peer/0.juju-log world:0: 25: [000.....0]
+unit-jgol-peer-0: 07:22:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:19 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0001....0]
+unit-jgol-peer-0: 07:22:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:20 WARNING unit.jgol-peer/0.juju-log world:0: 25: [00011...0]
+unit-jgol-peer-0: 07:22:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:20 WARNING unit.jgol-peer/0.juju-log world:0: 25: [000111..0]
+unit-jgol-peer-0: 07:22:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:21 WARNING unit.jgol-peer/0.juju-log world:0: 25: [0001110.0]
+unit-jgol-peer-0: 07:22:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:21 WARNING unit.jgol-peer/0.juju-log world:0: 25: [000111000] --> 26
+unit-jgol-peer-0: 07:22:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:22 WARNING unit.jgol-peer/0.juju-log world:0: 26: [0........]
+unit-jgol-peer-0: 07:22:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:23 WARNING unit.jgol-peer/0.juju-log world:0: 26: [0.0......]
+unit-jgol-peer-0: 07:22:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:23 WARNING unit.jgol-peer/0.juju-log world:0: 26: [010......]
+unit-jgol-peer-0: 07:22:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:24 WARNING unit.jgol-peer/0.juju-log world:0: 26: [0100.....]
+unit-jgol-peer-0: 07:22:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:24 WARNING unit.jgol-peer/0.juju-log world:0: 26: [01001....]
+unit-jgol-peer-0: 07:22:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:25 WARNING unit.jgol-peer/0.juju-log world:0: 26: [010010...]
+unit-jgol-peer-0: 07:22:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:25 WARNING unit.jgol-peer/0.juju-log world:0: 26: [0100100..]
+unit-jgol-peer-0: 07:22:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:26 WARNING unit.jgol-peer/0.juju-log world:0: 26: [01001001.]
+unit-jgol-peer-0: 07:22:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:26 WARNING unit.jgol-peer/0.juju-log world:0: 26: [010010010] --> 27
+unit-jgol-peer-0: 07:22:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:27 WARNING unit.jgol-peer/0.juju-log world:0: 27: [0........]
+unit-jgol-peer-0: 07:22:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:28 WARNING unit.jgol-peer/0.juju-log world:0: 27: [0.....0..]
+unit-jgol-peer-0: 07:22:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:28 WARNING unit.jgol-peer/0.juju-log world:0: 27: [00....0..]
+unit-jgol-peer-0: 07:22:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:29 WARNING unit.jgol-peer/0.juju-log world:0: 27: [000...0..]
+unit-jgol-peer-0: 07:22:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:29 WARNING unit.jgol-peer/0.juju-log world:0: 27: [0001..0..]
+unit-jgol-peer-0: 07:22:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:30 WARNING unit.jgol-peer/0.juju-log world:0: 27: [00011.0..]
+unit-jgol-peer-0: 07:22:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:30 WARNING unit.jgol-peer/0.juju-log world:0: 27: [0001110..]
+unit-jgol-peer-0: 07:22:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:31 WARNING unit.jgol-peer/0.juju-log world:0: 27: [00011100.]
+unit-jgol-peer-0: 07:22:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:31 WARNING unit.jgol-peer/0.juju-log world:0: 27: [000111000] --> 28
+unit-jgol-peer-0: 07:22:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:32 WARNING unit.jgol-peer/0.juju-log world:0: 28: [0........]
+unit-jgol-peer-0: 07:22:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:33 WARNING unit.jgol-peer/0.juju-log world:0: 28: [0.....0..]
+unit-jgol-peer-0: 07:22:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:33 WARNING unit.jgol-peer/0.juju-log world:0: 28: [01....0..]
+unit-jgol-peer-0: 07:22:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:34 WARNING unit.jgol-peer/0.juju-log world:0: 28: [010...0..]
+unit-jgol-peer-0: 07:22:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:34 WARNING unit.jgol-peer/0.juju-log world:0: 28: [0100..0..]
+unit-jgol-peer-0: 07:22:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:35 WARNING unit.jgol-peer/0.juju-log world:0: 28: [01001.0..]
+unit-jgol-peer-0: 07:22:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:35 WARNING unit.jgol-peer/0.juju-log world:0: 28: [0100100..]
+unit-jgol-peer-0: 07:22:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:36 WARNING unit.jgol-peer/0.juju-log world:0: 28: [01001001.]
+unit-jgol-peer-0: 07:22:36 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:36 WARNING unit.jgol-peer/0.juju-log world:0: 28: [010010010] --> 29
+unit-jgol-peer-0: 07:22:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:37 WARNING unit.jgol-peer/0.juju-log world:0: 29: [0........]
+unit-jgol-peer-0: 07:22:37 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:38 WARNING unit.jgol-peer/0.juju-log world:0: 29: [0.0......]
+unit-jgol-peer-0: 07:22:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:38 WARNING unit.jgol-peer/0.juju-log world:0: 29: [000......]
+unit-jgol-peer-0: 07:22:38 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:39 WARNING unit.jgol-peer/0.juju-log world:0: 29: [0001.....]
+unit-jgol-peer-0: 07:22:39 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:39 WARNING unit.jgol-peer/0.juju-log world:0: 29: [00011....]
+unit-jgol-peer-0: 07:22:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:40 WARNING unit.jgol-peer/0.juju-log world:0: 29: [000111...]
+unit-jgol-peer-0: 07:22:40 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:40 WARNING unit.jgol-peer/0.juju-log world:0: 29: [0001110..]
+unit-jgol-peer-0: 07:22:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:41 WARNING unit.jgol-peer/0.juju-log world:0: 29: [00011100.]
+unit-jgol-peer-0: 07:22:41 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:41 WARNING unit.jgol-peer/0.juju-log world:0: 29: [000111000] --> 30
+unit-jgol-peer-0: 07:22:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:42 WARNING unit.jgol-peer/0.juju-log world:0: 30: [0........]
+unit-jgol-peer-0: 07:22:42 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:43 WARNING unit.jgol-peer/0.juju-log world:0: 30: [0.0......]
+unit-jgol-peer-0: 07:22:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:43 WARNING unit.jgol-peer/0.juju-log world:0: 30: [010......]
+unit-jgol-peer-0: 07:22:43 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:44 WARNING unit.jgol-peer/0.juju-log world:0: 30: [0100.....]
+unit-jgol-peer-0: 07:22:44 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:44 WARNING unit.jgol-peer/0.juju-log world:0: 30: [01001....]
+unit-jgol-peer-0: 07:22:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:45 WARNING unit.jgol-peer/0.juju-log world:0: 30: [010010...]
+unit-jgol-peer-0: 07:22:45 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:45 WARNING unit.jgol-peer/0.juju-log world:0: 30: [0100100..]
+unit-jgol-peer-0: 07:22:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:46 WARNING unit.jgol-peer/0.juju-log world:0: 30: [01001001.]
+unit-jgol-peer-0: 07:22:46 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:46 WARNING unit.jgol-peer/0.juju-log world:0: 30: [010010010] --> 31
+unit-jgol-peer-0: 07:22:47 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:47 WARNING unit.jgol-peer/0.juju-log world:0: 31: [0........]
+unit-jgol-peer-0: 07:22:47 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:48 WARNING unit.jgol-peer/0.juju-log world:0: 31: [0.0......]
+unit-jgol-peer-0: 07:22:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:48 WARNING unit.jgol-peer/0.juju-log world:0: 31: [000......]
+unit-jgol-peer-0: 07:22:48 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:49 WARNING unit.jgol-peer/0.juju-log world:0: 31: [0001.....]
+unit-jgol-peer-0: 07:22:49 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:49 WARNING unit.jgol-peer/0.juju-log world:0: 31: [00011....]
+unit-jgol-peer-0: 07:22:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:50 WARNING unit.jgol-peer/0.juju-log world:0: 31: [000111...]
+unit-jgol-peer-0: 07:22:50 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:50 WARNING unit.jgol-peer/0.juju-log world:0: 31: [0001110..]
+unit-jgol-peer-0: 07:22:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:51 WARNING unit.jgol-peer/0.juju-log world:0: 31: [00011100.]
+unit-jgol-peer-0: 07:22:51 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:51 WARNING unit.jgol-peer/0.juju-log world:0: 31: [000111000] --> 32
+unit-jgol-peer-0: 07:22:52 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:52 WARNING unit.jgol-peer/0.juju-log world:0: 32: [0........]
+unit-jgol-peer-0: 07:22:52 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:53 WARNING unit.jgol-peer/0.juju-log world:0: 32: [0.......0]
+unit-jgol-peer-0: 07:22:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:53 WARNING unit.jgol-peer/0.juju-log world:0: 32: [01......0]
+unit-jgol-peer-0: 07:22:53 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:54 WARNING unit.jgol-peer/0.juju-log world:0: 32: [010.....0]
+unit-jgol-peer-0: 07:22:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:54 WARNING unit.jgol-peer/0.juju-log world:0: 32: [0100....0]
+unit-jgol-peer-0: 07:22:54 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:55 WARNING unit.jgol-peer/0.juju-log world:0: 32: [01001...0]
+unit-jgol-peer-0: 07:22:55 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:55 WARNING unit.jgol-peer/0.juju-log world:0: 32: [010010..0]
+unit-jgol-peer-0: 07:22:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:56 WARNING unit.jgol-peer/0.juju-log world:0: 32: [0100100.0]
+unit-jgol-peer-0: 07:22:56 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:56 WARNING unit.jgol-peer/0.juju-log world:0: 32: [010010010] --> 33
+unit-jgol-peer-0: 07:22:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:57 WARNING unit.jgol-peer/0.juju-log world:0: 33: [0........]
+unit-jgol-peer-0: 07:22:57 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:58 WARNING unit.jgol-peer/0.juju-log world:0: 33: [0.0......]
+unit-jgol-peer-0: 07:22:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:58 WARNING unit.jgol-peer/0.juju-log world:0: 33: [000......]
+unit-jgol-peer-0: 07:22:58 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:59 WARNING unit.jgol-peer/0.juju-log world:0: 33: [0001.....]
+unit-jgol-peer-0: 07:22:59 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:22:59 WARNING unit.jgol-peer/0.juju-log world:0: 33: [00011....]
+unit-jgol-peer-0: 07:23:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:00 WARNING unit.jgol-peer/0.juju-log world:0: 33: [000111...]
+unit-jgol-peer-0: 07:23:00 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:00 WARNING unit.jgol-peer/0.juju-log world:0: 33: [0001110..]
+unit-jgol-peer-0: 07:23:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:01 WARNING unit.jgol-peer/0.juju-log world:0: 33: [00011100.]
+unit-jgol-peer-0: 07:23:01 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:01 WARNING unit.jgol-peer/0.juju-log world:0: 33: [000111000] --> 34
+unit-jgol-peer-0: 07:23:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:02 WARNING unit.jgol-peer/0.juju-log world:0: 34: [0........]
+unit-jgol-peer-0: 07:23:02 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:03 WARNING unit.jgol-peer/0.juju-log world:0: 34: [01.......]
+unit-jgol-peer-0: 07:23:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:03 WARNING unit.jgol-peer/0.juju-log world:0: 34: [010......]
+unit-jgol-peer-0: 07:23:03 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:04 WARNING unit.jgol-peer/0.juju-log world:0: 34: [0100.....]
+unit-jgol-peer-0: 07:23:04 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:04 WARNING unit.jgol-peer/0.juju-log world:0: 34: [01001....]
+unit-jgol-peer-0: 07:23:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:05 WARNING unit.jgol-peer/0.juju-log world:0: 34: [010010...]
+unit-jgol-peer-0: 07:23:05 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:05 WARNING unit.jgol-peer/0.juju-log world:0: 34: [0100100..]
+unit-jgol-peer-0: 07:23:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:06 WARNING unit.jgol-peer/0.juju-log world:0: 34: [01001001.]
+unit-jgol-peer-0: 07:23:06 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:06 WARNING unit.jgol-peer/0.juju-log world:0: 34: [010010010] --> 35
+unit-jgol-peer-0: 07:23:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:07 WARNING unit.jgol-peer/0.juju-log world:0: 35: [0........]
+unit-jgol-peer-0: 07:23:07 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:08 WARNING unit.jgol-peer/0.juju-log world:0: 35: [0....1...]
+unit-jgol-peer-0: 07:23:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:08 WARNING unit.jgol-peer/0.juju-log world:0: 35: [00...1...]
+unit-jgol-peer-0: 07:23:08 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:09 WARNING unit.jgol-peer/0.juju-log world:0: 35: [000..1...]
+unit-jgol-peer-0: 07:23:09 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:09 WARNING unit.jgol-peer/0.juju-log world:0: 35: [0001.1...]
+unit-jgol-peer-0: 07:23:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:10 WARNING unit.jgol-peer/0.juju-log world:0: 35: [000111...]
+unit-jgol-peer-0: 07:23:10 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:10 WARNING unit.jgol-peer/0.juju-log world:0: 35: [0001110..]
+unit-jgol-peer-0: 07:23:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:11 WARNING unit.jgol-peer/0.juju-log world:0: 35: [00011100.]
+unit-jgol-peer-0: 07:23:11 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:11 WARNING unit.jgol-peer/0.juju-log world:0: 35: [000111000] --> 36
+unit-jgol-peer-0: 07:23:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:12 WARNING unit.jgol-peer/0.juju-log world:0: 36: [0........]
+unit-jgol-peer-0: 07:23:12 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:13 WARNING unit.jgol-peer/0.juju-log world:0: 36: [0.......0]
+unit-jgol-peer-0: 07:23:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:13 WARNING unit.jgol-peer/0.juju-log world:0: 36: [01......0]
+unit-jgol-peer-0: 07:23:13 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:14 WARNING unit.jgol-peer/0.juju-log world:0: 36: [010.....0]
+unit-jgol-peer-0: 07:23:14 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:14 WARNING unit.jgol-peer/0.juju-log world:0: 36: [0100....0]
+unit-jgol-peer-0: 07:23:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:15 WARNING unit.jgol-peer/0.juju-log world:0: 36: [01001...0]
+unit-jgol-peer-0: 07:23:15 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:15 WARNING unit.jgol-peer/0.juju-log world:0: 36: [010010..0]
+unit-jgol-peer-0: 07:23:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:16 WARNING unit.jgol-peer/0.juju-log world:0: 36: [0100100.0]
+unit-jgol-peer-0: 07:23:16 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:16 WARNING unit.jgol-peer/0.juju-log world:0: 36: [010010010] --> 37
+unit-jgol-peer-0: 07:23:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:17 WARNING unit.jgol-peer/0.juju-log world:0: 37: [0........]
+unit-jgol-peer-0: 07:23:17 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:18 WARNING unit.jgol-peer/0.juju-log world:0: 37: [0....1...]
+unit-jgol-peer-0: 07:23:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:18 WARNING unit.jgol-peer/0.juju-log world:0: 37: [00...1...]
+unit-jgol-peer-0: 07:23:18 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:19 WARNING unit.jgol-peer/0.juju-log world:0: 37: [000..1...]
+unit-jgol-peer-0: 07:23:19 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:19 WARNING unit.jgol-peer/0.juju-log world:0: 37: [0001.1...]
+unit-jgol-peer-0: 07:23:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:20 WARNING unit.jgol-peer/0.juju-log world:0: 37: [000111...]
+unit-jgol-peer-0: 07:23:20 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:20 WARNING unit.jgol-peer/0.juju-log world:0: 37: [0001110..]
+unit-jgol-peer-0: 07:23:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:21 WARNING unit.jgol-peer/0.juju-log world:0: 37: [00011100.]
+unit-jgol-peer-0: 07:23:21 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:21 WARNING unit.jgol-peer/0.juju-log world:0: 37: [000111000] --> 38
+unit-jgol-peer-0: 07:23:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:22 WARNING unit.jgol-peer/0.juju-log world:0: 38: [0........]
+unit-jgol-peer-0: 07:23:22 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:23 WARNING unit.jgol-peer/0.juju-log world:0: 38: [0.......0]
+unit-jgol-peer-0: 07:23:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:23 WARNING unit.jgol-peer/0.juju-log world:0: 38: [01......0]
+unit-jgol-peer-0: 07:23:23 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:24 WARNING unit.jgol-peer/0.juju-log world:0: 38: [010.....0]
+unit-jgol-peer-0: 07:23:24 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:24 WARNING unit.jgol-peer/0.juju-log world:0: 38: [0100....0]
+unit-jgol-peer-0: 07:23:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:25 WARNING unit.jgol-peer/0.juju-log world:0: 38: [01001...0]
+unit-jgol-peer-0: 07:23:25 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:25 WARNING unit.jgol-peer/0.juju-log world:0: 38: [010010..0]
+unit-jgol-peer-0: 07:23:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:26 WARNING unit.jgol-peer/0.juju-log world:0: 38: [0100100.0]
+unit-jgol-peer-0: 07:23:26 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:26 WARNING unit.jgol-peer/0.juju-log world:0: 38: [010010010] --> 39
+unit-jgol-peer-0: 07:23:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:27 WARNING unit.jgol-peer/0.juju-log world:0: 39: [0........]
+unit-jgol-peer-0: 07:23:27 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:28 WARNING unit.jgol-peer/0.juju-log world:0: 39: [0.......0]
+unit-jgol-peer-0: 07:23:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:28 WARNING unit.jgol-peer/0.juju-log world:0: 39: [00......0]
+unit-jgol-peer-0: 07:23:28 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:29 WARNING unit.jgol-peer/0.juju-log world:0: 39: [000.....0]
+unit-jgol-peer-0: 07:23:29 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:29 WARNING unit.jgol-peer/0.juju-log world:0: 39: [0001....0]
+unit-jgol-peer-0: 07:23:30 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:30 WARNING unit.jgol-peer/0.juju-log Resetting... [0001....0]
+unit-jgol-peer-0: 07:23:30 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:30 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [.001....0]
+unit-jgol-peer-0: 07:23:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:31 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [.00.....0]
+unit-jgol-peer-0: 07:23:31 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:31 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [..0.....0]
+unit-jgol-peer-0: 07:23:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:32 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [........0]
+unit-jgol-peer-0: 07:23:32 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:33 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [........0]
+unit-jgol-peer-0: 07:23:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:33 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [........0]
+unit-jgol-peer-0: 07:23:33 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:34 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [........0]
+unit-jgol-peer-0: 07:23:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:34 WARNING unit.jgol-peer/0.juju-log world:0: Resetting... [........0]
+unit-jgol-peer-0: 07:23:34 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)
+unit-jgol-peer-0: 07:23:35 WARNING unit.jgol-peer/0.juju-log world:0: Reset [000111000]
+unit-jgol-peer-0: 07:23:35 INFO juju.worker.uniter.operation ran "world-relation-changed" hook (via hook dispatching script: dispatch)

@@ -27,8 +27,26 @@ def process_file(path, n):
         rv.append((time, m["board"]))
     return rv
 
+def expand_contract(data):
+    try:
+        it = iter(data)
+        ct, cb = next(it)
+        yield ct, cb
+        while True:
+            t, b = next(it)
+            # 0, cat; 0, dog --> 0, cat
+            if t == ct: continue
+            # 0, cat; 2, dog --> 0, cat; 1, cat; 2, dog
+            for i in range(ct + 1, t):
+                yield i, cb
+            yield t, b
+            ct, cb = t, b
+    except StopIteration:
+        return
+
+
 if __name__ == "__main__":
     for k, n, p in find_files("../data"):
         print("fyi", k, n)
-        for t, b in process_file(p, n):
+        for t, b in expand_contract(process_file(p, n)):
             print(t, b)
