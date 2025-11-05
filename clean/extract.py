@@ -28,7 +28,8 @@ def process_file(path, n):
         if starttime is None: starttime = abstime
         time = abstime - starttime
         rv.append((time, m["board"]))
-    return rv
+    interpolated = [rv[-1][0] * i * 10 // len(rv) for i in range(len(rv))]
+    return [(i, b) for i, (_, b) in zip(interpolated, rv)]
 
 CONV = {
     (".", "0"): 0,
@@ -72,7 +73,7 @@ def expand_contract(data):
 def save_gif(data, path):
     side = int(len(data[0]) ** 0.5)
     frames = [Image.frombytes("L", (side, side), frame).resize((side*10, side*10), resample=0) for frame in data]
-    frames[0].save(path, save_all=True, append_images=frames[1:], duration=1000, loop=0, disposal=2)
+    frames[0].save(path, save_all=True, append_images=frames[1:], duration=100, loop=0, disposal=2)
 
 if __name__ == "__main__":
     for k, n, p in find_files("../data"):
