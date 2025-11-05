@@ -12,11 +12,19 @@ def find_files(where):
     return rv
 
 def process_file(path, n):
+    starttime = None
     rv = []
     for line in path.read_text().split("\n"):
-        m = re.search(fr' (?P<time>\d{{2}}:\d{{2}}:\d{{2}}) .* \[(?P<board>[01]{{{n}}})\]', line)
+        if "Reset" in line: continue
+        m = re.search(fr' (?P<time>\d{{2}}:\d{{2}}:\d{{2}}) .* \[(?P<board>[01.]{{{n}}})\]', line)
         if not m: continue
-        rv.append((m["time"], m["board"]))
+        # Unit tests collapse relation events, the board is filled all at once
+        if "WARNING" not in line and "." in m["board"]: continue
+        hh,mm,ss = map(int, m["time"].split(":"))
+        abstime = hh*3600 + mm*60 + ss
+        if starttime is None: starttime = abstime
+        time = abstime - starttime
+        rv.append((time, m["board"]))
     return rv
 
 if __name__ == "__main__":
